@@ -1,2 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="home banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%=image_url("DSC05028.JPG")%>')">
+  <div class="banner-top">
+    <h1>Bienvenue sur le site des paris de la Route du rhum !</h1>
+    <%= link_to "Pariez !", boats_path, class: "btn-main" %>
+  </div>
+</div>
