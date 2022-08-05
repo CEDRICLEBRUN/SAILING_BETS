@@ -42,3 +42,21 @@
     text-decoration-color: $gray ;
   }
 }
+
+.btn-category {
+  background-color: white;
+  color: $blue;
+  border-radius: 5px;
+  padding: 12px 48px;
+  border: 2px solid white;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  height: 80px;
+  width: 300px;
+  &:hover {
+    color: white;
+    background-color: $blue;
+  }
+}
