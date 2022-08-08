@@ -1,1 +1,16 @@
-<h1>Mon pari !</h1>
+<h1>Mes paris !</h1>
+
+<% case params[:category] %>
+<% when "Ultim" %>
+  <%= render "shared/ultim_bets" %>
+<% when "IMOCA" %>
+  <%= render "shared/imoca_bets" %>
+<% when "Ocean Fifty" %>
+  <%= render "shared/ocean_fifty_bets" %>
+<% when "Class 40" %>
+  <%= render "shared/class_40_bets" %>
+<% when "Rhum Mono" %>
+  <%= render "shared/rhum_mono_bets" %>
+<% when "Rhum Multi" %>
+  <%= render "shared/rhum_multi_bets" %>
+<% end %>

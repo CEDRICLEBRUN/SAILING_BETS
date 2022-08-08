@@ -2,12 +2,36 @@
 <p>Find me in app/views/bets/index.html.erb</p>
 
 <div class="d-flex justify-content-between">
-  <%= link_to "Ultim", new_bet_path, class: "btn-category m-2" %>
-  <%= link_to "IMOCA", new_bet_path, class: "btn-category m-2" %>
-  <%= link_to "Ocean Fifty", new_bet_path, class: "btn-category m-2" %>
+  <%= link_to new_bet_path(category: "Ultim") do %>
+    <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
+      <%= "Ultim" %>
+    </div>
+  <% end %>
+  <%= link_to new_bet_path(category: "IMOCA") do %>
+    <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
+      <%= "IMOCA" %>
+    </div>
+  <% end %>
+  <%= link_to new_bet_path(category: "Ocean Fifty") do %>
+    <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
+      <%= "Ocean Fifty" %>
+    </div>
+  <% end %>
 </div>
 <div class="d-flex justify-content-between">
-  <%= link_to "Class 40", new_bet_path, class: "btn-category m-2" %>
-  <%= link_to "Rhum Mono", new_bet_path, class: "btn-category m-2" %>
-  <%= link_to "Rhum Multi", new_bet_path, class: "btn-category m-2" %>
+  <%= link_to new_bet_path(category: "Class 40") do %>
+    <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
+      <%= "Class 40" %>
+    </div>
+  <% end %>
+  <%= link_to new_bet_path(category: "Rhum Mono") do %>
+    <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
+      <%= "Rhum Mono" %>
+    </div>
+  <% end %>
+  <%= link_to new_bet_path(category: "Rhum Multi") do %>
+    <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
+      <%= "Rhum Multi" %>
+    </div>
+  <% end %>
 </div>

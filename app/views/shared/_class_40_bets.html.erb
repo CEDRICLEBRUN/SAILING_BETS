@@ -1,0 +1,6 @@
+<%= form_with url: bets_path, method: :post do |f| %>
+  <%= f.select :skipper_1, Boat::CLASS40, prompt: 'Vainqueur' %>
+  <%= f.select :skipper_2, Boat::CLASS40, prompt: 'Deuxième' %>
+  <%= f.select :skipper_3, Boat::CLASS40, prompt: 'Troisième' %>
+  <%= f.submit "Bon vent !", class: "btn btn-main" %>
+<% end %>
