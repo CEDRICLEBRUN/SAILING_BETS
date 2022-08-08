@@ -1,6 +1,11 @@
 class BetsController < ApplicationController
   def index
-    @bets = Bet.where(user: current_user)
+    @ultims = index_boat("Ultim")
+    @imocas = index_boat("IMOCA")
+    @ocean_fifties = index_boat("Ocean Fifty")
+    @class_40s = index_boat("Class 40")
+    @rhum_monos = index_boat("Rhum Mono")
+    @rhum_multis = index_boat("Rhum Multi")
   end
 
   def new
@@ -17,7 +22,7 @@ class BetsController < ApplicationController
 
     # third bet
     boat_name = bet_params["skipper_3"].split("-").first.chop
-    create_bet(2, boat_name)
+    create_bet(3, boat_name)
 
     redirect_to bets_path
   end
@@ -34,5 +39,9 @@ class BetsController < ApplicationController
     bet.user = current_user
     bet.boat = Boat.where(name: boat_name).first
     bet.save!
+  end
+
+  def index_boat(category)
+    Bet.includes(:boat).where(user: current_user, boat: { category: category })
   end
 end
