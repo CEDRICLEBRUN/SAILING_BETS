@@ -1,41 +1,44 @@
-<h1>Bets#index</h1>
-<p>Find me in app/views/bets/index.html.erb</p>
+<h1>Mes paris !</h1>
 
-<div class="d-flex justify-content-between">
+<div class="d-flex justify-content-between text-center">
 
   <% unless @ultims.empty?%>
-    <div>
+    <div class="card-category m-3">
       <% @ultims.each do |ultim| %>
         <p><%= ultim.position%> : <%= ultim.boat.name %></p>
       <% end %>
     </div>
   <% else %>
     <%= link_to new_bet_path(category: "Ultim") do %>
-      <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
+      <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
         <%= "Ultim" %>
       </div>
     <% end %>
   <% end %>
 
   <% unless @imocas.empty? %>
-    <% @imocas.each do |imoca| %>
-      <p><%= imoca.position%> : <%= imoca.boat.name %></p>
-    <% end %>
+    <div class="card-category m-3">
+      <% @imocas.each do |imoca| %>
+        <p><%= imoca.position%> : <%= imoca.boat.name %></p>
+      <% end %>
+    </div>
   <% else %>
     <%= link_to new_bet_path(category: "IMOCA") do %>
-      <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
+      <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
         <%= "IMOCA" %>
       </div>
     <% end %>
   <% end %>
 
   <% unless @ocean_fifties.empty? %>
-    <% @ocean_fifties.each do |ocean_fifty| %>
-      <p><%= ocean_fifty.position%> : <%= ocean_fifty.boat.name %></p>
-    <% end %>
+    <div class="card-category m-3">
+      <% @ocean_fifties.each do |ocean_fifty| %>
+        <p><%= ocean_fifty.position%> : <%= ocean_fifty.boat.name %></p>
+      <% end %>
+    </div>
   <% else %>
     <%= link_to new_bet_path(category: "Ocean Fifty") do %>
-      <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
+      <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
         <%= "Ocean Fifty" %>
       </div>
     <% end %>
@@ -43,38 +46,44 @@
 
 </div>
 
-<div class="d-flex justify-content-between">
+<div class="d-flex justify-content-between text-center">
   <% unless @class_40s.empty? %>
-    <% @class_40s.each do |class_40| %>
-      <p><%= class_40.position%> : <%= class_40.boat.name %></p>
-    <% end %>
+    <div class="card-category m-3">
+      <% @class_40s.each do |class_40| %>
+        <p><%= class_40.position%> : <%= class_40.boat.name %></p>
+      <% end %>
+    </div>
   <% else %>
     <%= link_to new_bet_path(category: "Class 40") do %>
-      <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
+      <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
         <%= "Class 40" %>
       </div>
     <% end %>
   <% end %>
 
   <% unless @rhum_monos.empty? %>
-    <% @rhum_monos.each do |rhum_mono| %>
-      <p><%= rhum_mono.position%> : <%= rhum_mono.boat.name %></p>
-    <% end %>
+    <div class="card-category m-3">
+      <% @rhum_monos.each do |rhum_mono| %>
+        <p><%= rhum_mono.position%> : <%= rhum_mono.boat.name %></p>
+      <% end %>
+    </div>
   <% else %>
     <%= link_to new_bet_path(category: "Rhum Mono") do %>
-      <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
+      <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
         <%= "Rhum Mono" %>
       </div>
     <% end %>
   <% end %>
 
   <% unless @rhum_multis.empty? %>
-    <% @rhum_multis.each do |rhum_multi| %>
-      <p><%= rhum_multi.position%> : <%= rhum_multi.boat.name %></p>
-    <% end %>
+    <div class="card-category m-3">
+      <% @rhum_multis.each do |rhum_multi| %>
+        <p><%= rhum_multi.position%> : <%= rhum_multi.boat.name %></p>
+      <% end %>
+    </div>
   <% else %>
     <%= link_to new_bet_path(category: "Rhum Multi") do %>
-      <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
+      <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
         <%= "Rhum Multi" %>
       </div>
     <% end %>
