@@ -1,8 +1,19 @@
 <h1>Boats#index</h1>
-<p>Find me in app/views/boats/index.html.erb</p>
 
-<%= image_tag "DSC05013.JPG", alt: "Le Wagon", width: 200 %>
+<div class="d-flex justify-content-between my-2">
+  <%= link_to 'Ultim', boats_path(category: "Ultim"), class: (params[:category] == "Ultim" ? "btn-act" : "btn-dis") %>
+  <%= link_to 'IMOCA', boats_path(category: 'IMOCA'), class: (params[:category] == "IMOCA" ? "btn-act" : "btn-dis") %>
+  <%= link_to 'Ocean Fifty', boats_path(category: "Ocean Fifty"), class: (params[:category] == "Ocean Fifty" ? "btn-act" : "btn-dis") %>
+  <%= link_to 'Class 40', boats_path(category: 'Class 40'), class: (params[:category] == "Class 40" ? "btn-act" : "btn-dis") %>
+  <%= link_to 'Rhum Mono', boats_path(category: "Rhum Mono"), class: (params[:category] == "Rhum Mono" ? "btn-act" : "btn-dis") %>
+  <%= link_to 'Rhum Multi', boats_path(category: 'Rhum multi'), class: (params[:category] == "Rhum multi" ? "btn-act" : "btn-dis") %>
+</div>
 
 <% @boats.each do |boat| %>
-  <p><%= boat.name %></p>
+  <div class="card-boat d-flex">
+    <p><strong><%= boat.name %></strong> - <%= boat.skipper_last_name %> <%= boat.skipper_first_name%></p>
+    <%= link_to boat.url_link do %>
+      <i class="fa-solid fa-circle-info"></i>
+    <% end %>
+  </div>
 <% end %>

@@ -29,13 +29,14 @@
 }
 
 .btn-sec {
-  background-color: transparent;
-  color: $blue;
+  background-color: $blue;
+  color: white;
   font-weight: bold;
-  // border-radius: 5px;
-  // padding: 8px 24px;
-  // border: 1px solid $blue;
+  border-radius: 5px;
+  padding: 10px 40px;
+  border: 2px solid $blue;
   text-decoration: none;
+  font-size: 40px;
   &:hover {
     text-decoration: underline;
     text-underline-offset: 5px;
@@ -55,6 +56,38 @@
   font-size: 30px;
   height: 80px;
   width: 300px;
+  &:hover {
+    color: white;
+    background-color: $blue;
+  }
+}
+
+.btn-act {
+  background-color: white;
+  color: $blue;
+  border-radius: 5px;
+  padding: 8px 30px;
+  border: 2px solid white;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  &:hover {
+    color: white;
+    background-color: $blue;
+  }
+}
+
+.btn-dis {
+  background-color: $blue;
+  color: white;
+  border-radius: 5px;
+  padding: 8px 30px;
+  border: 2px solid white;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
   &:hover {
     color: white;
     background-color: $blue;
