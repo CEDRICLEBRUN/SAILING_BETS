@@ -8,7 +8,7 @@ class Boat < ApplicationRecord
   class_40 = []
   rhum_multi = []
   rhum_mono = []
-  Boat.all.each do |boat|
+  Boat.all.sort_by(&:name).each do |boat|
     case boat.category
     when "Ultim"
       ultims << "#{boat.name} - #{boat.skipper_last_name} #{boat.skipper_first_name}"

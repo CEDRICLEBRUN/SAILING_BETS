@@ -4,8 +4,9 @@
 
   <% unless @ultims.empty?%>
     <div class="card-category m-3">
+      <h2><strong>Ultim</strong></h2>
       <% @ultims.each do |ultim| %>
-        <p><%= ultim.position%> : <%= ultim.boat.name %></p>
+        <p><%= ultim.position%>. <em><%= ultim.boat.name %></em> - <%= ultim.boat.skipper_last_name %> <%= ultim.boat.skipper_first_name %></p>
       <% end %>
     </div>
   <% else %>
@@ -20,8 +21,9 @@
 
   <% unless @imocas.empty? %>
     <div class="card-category m-3">
+      <h2><strong>IMOCA</strong></h2>
       <% @imocas.each do |imoca| %>
-        <p><%= imoca.position%> : <%= imoca.boat.name %></p>
+        <p><%= imoca.position%>. <em><%= imoca.boat.name %></em> - <%= imoca.boat.skipper_last_name %> <%= imoca.boat.skipper_first_name %></p>
       <% end %>
     </div>
   <% else %>
@@ -36,8 +38,9 @@
 
   <% unless @ocean_fifties.empty? %>
     <div class="card-category m-3">
+      <h2><strong>Ocean Fifty</strong></h2>
       <% @ocean_fifties.each do |ocean_fifty| %>
-        <p><%= ocean_fifty.position%> : <%= ocean_fifty.boat.name %></p>
+        <p><%= ocean_fifty.position%>. <em><%= ocean_fifty.boat.name %></em> - <%= ocean_fifty.boat.skipper_last_name %> <%= ocean_fifty.boat.skipper_first_name %></p>
       <% end %>
     </div>
   <% else %>
@@ -55,8 +58,9 @@
 <div class="d-flex justify-content-between text-center">
   <% unless @class_40s.empty? %>
     <div class="card-category m-3">
+      <h2><strong>Class 40</strong></h2>
       <% @class_40s.each do |class_40| %>
-        <p><%= class_40.position%> : <%= class_40.boat.name %></p>
+        <p><%= class_40.position%>. <em><%= class_40.boat.name%></em> - <%= class_40.boat.skipper_last_name %> <%= class_40.boat.skipper_first_name %></p>
       <% end %>
     </div>
   <% else %>
@@ -71,8 +75,9 @@
 
   <% unless @rhum_monos.empty? %>
     <div class="card-category m-3">
+      <h2><strong>Rhum Mono</strong></h2>
       <% @rhum_monos.each do |rhum_mono| %>
-        <p><%= rhum_mono.position%> : <%= rhum_mono.boat.name %></p>
+        <p><%= rhum_mono.position%>. <em><%= rhum_mono.boat.name%></em> - <%= rhum_mono.boat.skipper_last_name %> <%= rhum_mono.boat.skipper_first_name %></p>
       <% end %>
     </div>
   <% else %>
@@ -87,8 +92,9 @@
 
   <% unless @rhum_multis.empty? %>
     <div class="card-category m-3">
+      <h2><strong>Rhum Multi</strong></h2>
       <% @rhum_multis.each do |rhum_multi| %>
-        <p><%= rhum_multi.position%> : <%= rhum_multi.boat.name %></p>
+        <p><%= rhum_multi.position%>. <em><%= rhum_multi.boat.name%></em> - <%= rhum_multi.boat.skipper_last_name %> <%= rhum_multi.boat.skipper_first_name %></p>
       <% end %>
     </div>
   <% else %>

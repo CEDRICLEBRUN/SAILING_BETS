@@ -42,6 +42,6 @@ class BetsController < ApplicationController
   end
 
   def index_boat(category)
-    Bet.includes(:boat).where(user: current_user, boat: { category: category })
+    Bet.includes(:boat).where(user: current_user, boat: { category: category }).sort_by(&:position)
   end
 end
