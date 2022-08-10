@@ -1,4 +1,4 @@
-<h1>Mes paris !</h1>
+<h1 class="text-center m-3">Mes paris !</h1>
 
 <div class="d-flex justify-content-between text-center">
 
@@ -9,11 +9,13 @@
       <% end %>
     </div>
   <% else %>
-    <%= link_to new_bet_path(category: "Ultim") do %>
-      <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
-        <%= "Ultim" %>
-      </div>
-    <% end %>
+    <div class="card-category d-flex align-items-center">
+      <%= link_to new_bet_path(category: "Ultim") do %>
+        <div class="card-image m-3 d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013_300x400.jpg")%>')">
+          <h2><%= "Ultim" %></h2>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 
   <% unless @imocas.empty? %>
@@ -23,11 +25,13 @@
       <% end %>
     </div>
   <% else %>
-    <%= link_to new_bet_path(category: "IMOCA") do %>
-      <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
-        <%= "IMOCA" %>
-      </div>
-    <% end %>
+    <div class="card-category d-flex align-items-center">
+      <%= link_to new_bet_path(category: "IMOCA") do %>
+        <div class="card-image m-3 d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05125_300x400.jpg")%>')">
+          <h2><%= "IMOCA" %></h2>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 
   <% unless @ocean_fifties.empty? %>
@@ -37,11 +41,13 @@
       <% end %>
     </div>
   <% else %>
-    <%= link_to new_bet_path(category: "Ocean Fifty") do %>
-      <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
-        <%= "Ocean Fifty" %>
-      </div>
-    <% end %>
+    <div class="card-category d-flex align-items-center">
+      <%= link_to new_bet_path(category: "Ocean Fifty") do %>
+        <div class="card-image m-3 d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05145_300x400.jpg")%>')">
+          <h2><%= "Ocean Fifty" %></h2>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 
 </div>
@@ -54,11 +60,13 @@
       <% end %>
     </div>
   <% else %>
-    <%= link_to new_bet_path(category: "Class 40") do %>
-      <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
-        <%= "Class 40" %>
-      </div>
-    <% end %>
+    <div class="card-category d-flex align-items-center">
+      <%= link_to new_bet_path(category: "Class 40") do %>
+        <div class="card-image m-3 d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05139_300x400.jpg")%>')">
+          <h2><%= "Class 40" %></h2>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 
   <% unless @rhum_monos.empty? %>
@@ -68,11 +76,13 @@
       <% end %>
     </div>
   <% else %>
-    <%= link_to new_bet_path(category: "Rhum Mono") do %>
-      <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
-        <%= "Rhum Mono" %>
-      </div>
-    <% end %>
+    <div class="card-category d-flex align-items-center">
+      <%= link_to new_bet_path(category: "Rhum Mono") do %>
+        <div class="card-image m-3 d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05296_300x400.jpg")%>')">
+          <h2><%= "Rhum Mono" %></h2>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 
   <% unless @rhum_multis.empty? %>
@@ -82,10 +92,12 @@
       <% end %>
     </div>
   <% else %>
-    <%= link_to new_bet_path(category: "Rhum Multi") do %>
-      <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013.JPG")%>')">
-        <%= "Rhum Multi" %>
-      </div>
-    <% end %>
+    <div class="card-category d-flex align-items-center">
+      <%= link_to new_bet_path(category: "Rhum Multi") do %>
+        <div class="card-image m-3 d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05092_300x400.jpg")%>')">
+          <h2><%= "Rhum Multi" %></h2>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 </div>
