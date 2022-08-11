@@ -31,19 +31,37 @@
   border: 4px solid white;
 }
 
-.card-category {
+.cards-bets {
+  display: grid;
   height: 300px;
-  width: 400px;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  align-items: center;
 }
 
-.card-category a {
-  text-decoration: none;
+.card-bet {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
+  margin: 50px;
 }
 
-.card-image {
-  height: 300px;
-  width: 400px;
+.card-bet h2 {
+  font-size: 24px;
+  margin: 20px;
+}
+
+.card-bet p {
+  font-size: 15px;
 }
 
 .card-boat a {
