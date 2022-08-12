@@ -9,6 +9,7 @@
         <% @ultims.each do |ultim| %>
           <p><%= ultim.position%>. <em><%= ultim.boat.name %></em> - <%= ultim.boat.skipper_last_name %> <%= ultim.boat.skipper_first_name %></p>
         <% end %>
+        <%= link_to "Je modifie", bets_change_path(category: "Ultim"), class: "btn-bet" %>
       <% else %>
         <%= link_to "Je parie !", new_bet_path(category: "Ultim"), class: "btn-bet" %>
       <% end %>
@@ -22,6 +23,7 @@
         <% @imocas.each do |imoca| %>
           <p><%= imoca.position%>. <em><%= imoca.boat.name %></em> - <%= imoca.boat.skipper_last_name %> <%= imoca.boat.skipper_first_name %></p>
         <% end %>
+        <%= link_to "Je modifie", bets_change_path(category: "IMOCA"), class: "btn-bet" %>
       <% else %>
         <%= link_to "Je parie !", new_bet_path(category: "IMOCA"), class: "btn-bet" %>
       <% end %>
@@ -35,6 +37,7 @@
         <% @ocean_fifties.each do |ocean_fifty| %>
           <p><%= ocean_fifty.position%>. <em><%= ocean_fifty.boat.name %></em> - <%= ocean_fifty.boat.skipper_last_name %> <%= ocean_fifty.boat.skipper_first_name %></p>
         <% end %>
+        <%= link_to "Je modifie", bets_change_path(category: "Ocean Fifty"), class: "btn-bet" %>
       <% else %>
         <%= link_to "Je parie !", new_bet_path(category: "Ocean Fifty"), class: "btn-bet" %>
       <% end %>
@@ -48,6 +51,7 @@
         <% @class_40s.each do |class_40| %>
           <p><%= class_40.position%>. <em><%= class_40.boat.name %></em> - <%= class_40.boat.skipper_last_name %> <%= class_40.boat.skipper_first_name %></p>
         <% end %>
+        <%= link_to "Je modifie", bets_change_path(category: "Class 40"), class: "btn-bet" %>
       <% else %>
         <%= link_to "Je parie !", new_bet_path(category: "Class 40"), class: "btn-bet" %>
       <% end %>
@@ -61,6 +65,7 @@
         <% @rhum_monos.each do |rhum_mono| %>
           <p><%= rhum_mono.position%>. <em><%= rhum_mono.boat.name %></em> - <%= rhum_mono.boat.skipper_last_name %> <%= rhum_mono.boat.skipper_first_name %></p>
         <% end %>
+        <%= link_to "Je modifie", bets_change_path(category: "Rhum Mono"), class: "btn-bet" %>
       <% else %>
         <%= link_to "Je parie !", new_bet_path(category: "Rhum Mono"), class: "btn-bet" %>
       <% end %>
@@ -74,6 +79,7 @@
         <% @rhum_multis.each do |rhum_multi| %>
           <p><%= rhum_multi.position%>. <em><%= rhum_multi.boat.name %></em> - <%= rhum_multi.boat.skipper_last_name %> <%= rhum_multi.boat.skipper_first_name %></p>
         <% end %>
+        <%= link_to "Je modifie", bets_change_path(category: "Rhum Multi"), class: "btn-bet" %>
       <% else %>
         <%= link_to "Je parie !", new_bet_path(category: "Rhum Multi"), class: "btn-bet" %>
       <% end %>

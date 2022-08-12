@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-around align-items-center my-5">
 
   <div class="card-betting" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05145_600x800.jpg")%>')">
-    <%= form_with url: bets_path(category: params[:category]), method: :post do |f| %>
+    <%= form_with url: bets_modify_path(category: params[:category]), method: :post do |f| %>
       <div class="my-3"><%= f.select :skipper_1, Boat::OCEANFIFTY, prompt: 'Vainqueur' %></div>
       <div class="my-3"><%= f.select :skipper_2, Boat::OCEANFIFTY, prompt: 'Deuxième' %></div>
       <div class="my-3"><%= f.select :skipper_3, Boat::OCEANFIFTY, prompt: 'Troisième' %></div>
