@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_12_202749) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_15_102853) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admissions", force: :cascade do |t|
+    t.string "status", default: "Pending"
+    t.bigint "user_id", null: false
+    t.bigint "league_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["league_id"], name: "index_admissions_on_league_id"
+    t.index ["user_id"], name: "index_admissions_on_user_id"
+  end
 
   create_table "bets", force: :cascade do |t|
     t.integer "position"
@@ -44,6 +54,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_12_202749) do
     t.index ["user_id"], name: "index_leagues_on_user_id"
   end
 
+  create_table "registrations", force: :cascade do |t|
+    t.string "status", default: "Pending"
+    t.bigint "user_id", null: false
+    t.bigint "league_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["league_id"], name: "index_registrations_on_league_id"
+    t.index ["user_id"], name: "index_registrations_on_user_id"
+  end
+
   create_table "results", force: :cascade do |t|
     t.integer "result_position"
     t.bigint "boat_id", null: false
@@ -66,8 +86,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_12_202749) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "admissions", "leagues"
+  add_foreign_key "admissions", "users"
   add_foreign_key "bets", "boats"
   add_foreign_key "bets", "users"
   add_foreign_key "leagues", "users"
+  add_foreign_key "registrations", "leagues"
+  add_foreign_key "registrations", "users"
   add_foreign_key "results", "boats"
 end

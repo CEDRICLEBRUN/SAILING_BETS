@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :bets
   has_many :leagues
+  has_many :admissions
 end
