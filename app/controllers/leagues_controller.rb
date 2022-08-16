@@ -1,6 +1,8 @@
 class LeaguesController < ApplicationController
   def index
     @leagues = League.where(user: current_user)
+    @admission = Admission.new
+    @admissions = Admission.where(user: current_user)
   end
 
   def new

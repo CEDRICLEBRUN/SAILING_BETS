@@ -3,5 +3,14 @@
 <div class="container">
   <% @leagues.each do |league| %>
     <h2><%= league.title %></h2>
+    <%= simple_form_for [league, @admission] do |f| %>
+      <%= f.submit "Rejoindre", class: "btn btn-main w-100" %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="container">
+  <% @admissions.each do |admission| %>
+    <h2><%= admission.league.title %></h2>
   <% end %>
 </div>
