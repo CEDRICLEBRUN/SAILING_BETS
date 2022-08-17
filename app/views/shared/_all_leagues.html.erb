@@ -1,0 +1,10 @@
+<div class="container">
+  <%= link_to "Créer ma ligue", new_league_path %>
+
+  <% @leagues.each do |league| %>
+    <h2><%= league.title %></h2>
+    <%= simple_form_for [league, @admission] do |f| %>
+      <%= f.submit "Rejoindre", class: "btn btn-main w-100" %>
+    <% end %>
+  <% end %>
+</div>

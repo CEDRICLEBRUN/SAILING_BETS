@@ -1,16 +1,12 @@
-<h1>Mes ligues</h1>
+<div class="index-leagues">
+  <div class="d-flex justify-content-around my-2">
+    <%= link_to 'Mes ligues', leagues_path(choice: "my_leagues"), class: (params[:choice] == "my_leagues" || params[:choice].nil? ? "act" : "dis") %>
+    <%= link_to 'Toutes les ligues', leagues_path(choice: 'all_leagues'), class: (params[:choice] == "all_leagues" ? "act" : "dis") %>
+  </div>
 
-<div class="container">
-  <% @leagues.each do |league| %>
-    <h2><%= league.title %></h2>
-    <%= simple_form_for [league, @admission] do |f| %>
-      <%= f.submit "Rejoindre", class: "btn btn-main w-100" %>
-    <% end %>
-  <% end %>
-</div>
-
-<div class="container">
-  <% @admissions.each do |admission| %>
-    <h2><%= admission.league.title %></h2>
+  <% if params[:choice] == 'my_leagues' || params[:choice].nil? %>
+    <%= render "shared/my_leagues" %>
+  <% elsif params[:choice] == 'all_leagues' %>
+    <%= render "shared/all_leagues" %>
   <% end %>
 </div>

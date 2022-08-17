@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "bets/change", to: "bets#change"
   post "bets/modify", to: "bets#modify"
 
-  resources :leagues, only: [:index, :new, :create, :edit, :update, :delete] do
+  resources :leagues, only: [:index, :show, :new, :create, :edit, :update, :delete] do
     resources :admissions, only: [:new, :create, :delete]
   end
 end

@@ -1,8 +1,19 @@
 class LeaguesController < ApplicationController
   def index
-    @leagues = League.where(user: current_user)
+    @leagues = League.all
     @admission = Admission.new
     @admissions = Admission.where(user: current_user)
+  end
+
+  def show
+    if League.find(params[:id]).admissions.where(user: current_user).present?
+      @league = League.find(params[:id])
+      @admissions = Admission.where(league: @league)
+      @bets = Bet.all
+    else
+      flash[:alert] = "Pas accès à cette ligue..."
+      redirect_to leagues_path
+    end
   end
 
   def new
