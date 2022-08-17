@@ -18,18 +18,24 @@ class BetsController < ApplicationController
       render 'bets/new'
     else
     # first bet
-      boat_name = bet_params["skipper_1"].split("-").first.chop
-      create_bet(1, boat_name)
+      boat_name = bet_params["skipper_1"].reverse.split(" - ", 2).last.reverse
+      first_bet = create_bet(1, boat_name)
 
       #second bet
-      boat_name = bet_params["skipper_2"].split("-").first.chop
-      create_bet(2, boat_name)
+      boat_name = bet_params["skipper_2"].reverse.split(" - ", 2).last.reverse
+      second_bet = create_bet(2, boat_name)
 
       # third bet
-      boat_name = bet_params["skipper_3"].split("-").first.chop
-      create_bet(3, boat_name)
+      boat_name = bet_params["skipper_3"].reverse.split(" - ", 2).last.reverse
+      third_bet = create_bet(3, boat_name)
 
-      redirect_to bets_path, notice: "Pari pris en compte !"
+      if first_bet && second_bet && third_bet
+        raise
+        redirect_to bets_path, notice: "Pari pris en compte !"
+      else
+        flash[:alert] = "Vous ne pouvez choisir un bateau qu'une seule fois"
+        render :new
+      end
     end
   end
 
@@ -47,18 +53,23 @@ class BetsController < ApplicationController
       end
 
       # first bet
-      boat_name = bet_params["skipper_1"].split("-").first.chop
-      create_bet(1, boat_name)
+      boat_name = bet_params["skipper_1"].reverse.split(" - ", 2).last.reverse
+      first_bet = create_bet(1, boat_name)
 
       #second bet
-      boat_name = bet_params["skipper_2"].split("-").first.chop
-      create_bet(2, boat_name)
+      boat_name = bet_params["skipper_2"].reverse.split(" - ", 2).last.reverse
+      second_bet = create_bet(2, boat_name)
 
       # third bet
-      boat_name = bet_params["skipper_3"].split("-").first.chop
-      create_bet(3, boat_name)
+      boat_name = bet_params["skipper_3"].reverse.split(" - ", 2).last.reverse
+      third_bet = create_bet(3, boat_name)
 
-      redirect_to bets_path, notice: "Pari modifié et pris en compte !"
+      if first_bet && second_bet && third_bet
+        redirect_to bets_path, notice: "Pari modifié et pris en compte !"
+      else
+        flash[:alert] = "Vous ne pouvez choisir un bateau qu'une seule fois"
+        render :change
+      end
     end
   end
 
@@ -73,7 +84,7 @@ class BetsController < ApplicationController
     bet.position = position
     bet.user = current_user
     bet.boat = Boat.where(name: boat_name).first
-    bet.save!
+    bet.save
   end
 
   def index_boat(category)
