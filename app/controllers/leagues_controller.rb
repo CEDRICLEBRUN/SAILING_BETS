@@ -6,7 +6,7 @@ class LeaguesController < ApplicationController
   end
 
   def show
-    if League.find(params[:id]).admissions.where(user: current_user).present?
+    if League.find(params[:id]).admissions.where(user: current_user).present? || League.find(params[:id]).user == current_user
       @league = League.find(params[:id])
       @admissions = Admission.where(league: @league)
       @bets = Bet.all
@@ -24,6 +24,7 @@ class LeaguesController < ApplicationController
     @league = League.new(league_params)
     @league.user = current_user
     if @league.save
+
       redirect_to leagues_path
     else
       render :new

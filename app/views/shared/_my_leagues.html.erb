@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container my-3">
   <% @admissions.each do |admission| %>
-    <h2><%= link_to admission.league.title, league_path(admission.league), class:"btn-main" %></h2>
+    <%= link_to admission.league.title, league_path(admission.league), class:"btn-join" %>
   <% end %>
 
-  
+
 </div>

@@ -8,5 +8,8 @@ class AdmissionsController < ApplicationController
   end
 
   def delete
+    admission = Admission.find(params['admission'])
+    admission.destroy
+    redirect_to leagues_path(choice: 'all_leagues')
   end
 end

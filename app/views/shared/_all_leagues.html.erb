@@ -1,10 +1,18 @@
 <div class="container">
-  <%= link_to "Créer ma ligue", new_league_path %>
-
   <% @leagues.each do |league| %>
-    <h2><%= league.title %></h2>
-    <%= simple_form_for [league, @admission] do |f| %>
-      <%= f.submit "Rejoindre", class: "btn btn-main w-100" %>
-    <% end %>
+    <div class="league d-flex align-items-center">
+      <h2><%= league.title %></h2>
+      <% if league.admissions.where(user: current_user).present? %>
+        <%= link_to "Quitter", admissions_delete_path(admission: league.admissions.where(user: current_user).first), class: "btn-quit" %>
+      <% elsif league.user != current_user %>
+        <%= simple_form_for [league, @admission] do |f| %>
+          <%= f.submit "Rejoindre", class: "btn-join" %>
+        <% end %>
+      <% end %>
+    </div>
   <% end %>
+
+  <div class="d-flex justify-content-around my-5">
+    <%= link_to "Créer ma ligue", new_league_path, class: "btn-league" %>
+  </div>
 </div>
