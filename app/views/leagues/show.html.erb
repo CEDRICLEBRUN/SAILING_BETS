@@ -1,83 +1,161 @@
-<h1><%= @league.title %></h1>
+<h1 class="text-center my-3"><%= @league.title %></h1>
 
-<div class="container">
-  <% @admissions.each do |admission| %>
-    <h2><%= admission.user.first_name %> <%= admission.user.last_name %></h2>
-    <div class="cards-bets">
+<%# <div class="container"> %>
 
 
-      <div class="card-bet" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05013_300x400.jpg")%>')">
+<div class="bets-user">
+  <h2 class='bet-user text-center'><%= @league.user.first_name %> <%= @league.user.last_name %></h2>
+  <div class="user-bets">
+    <div class="user-bet">
+      <div>
+        <h2><strong>Ultim</strong></h2>
+        <% unless @bets.includes(:boat).where(user: @league.user, boat: { category: "Ultim" }).empty? %>
+          <% @bets.includes(:boat).where(user: @league.user, boat: { category: "Ultim" }).sort_by(&:position).each do |ultim| %>
+            <p><%= ultim.position%>. <em><%= ultim.boat.name %></em></p>
+          <% end %>
+          <% else %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="user-bet">
+      <div>
+        <h2><strong>IMOCA</strong></h2>
+        <% unless @bets.includes(:boat).where(user: @league.user, boat: { category: "IMOCA" }).empty? %>
+          <% @bets.includes(:boat).where(user: @league.user, boat: { category: "IMOCA" }).sort_by(&:position).each do |imoca| %>
+            <p><%= imoca.position%>. <em><%= imoca.boat.name %></em></p>
+          <% end %>
+        <% else %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="user-bet">
+      <div>
+        <h2><strong>Ocean Fifty</strong></h2>
+        <% unless @bets.includes(:boat).where(user: @league.user, boat: { category: "Ocean fifty" }).empty? %>
+          <% @bets.includes(:boat).where(user: @league.user, boat: { category: "Ocean fifty" }).sort_by(&:position).each do |ocean_fifty| %>
+            <p><%= ocean_fifty.position%>. <em><%= ocean_fifty.boat.name %></em></p>
+          <% end %>
+        <% else %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="user-bet">
+      <div>
+        <h2><strong>Class 40</strong></h2>
+        <% unless @bets.includes(:boat).where(user: @league.user, boat: { category: "Class 40" }).empty? %>
+          <% @bets.includes(:boat).where(user: @league.user, boat: { category: "Class 40" }).sort_by(&:position).each do |class_40| %>
+            <p><%= class_40.position%>. <em><%= class_40.boat.name %></em></p>
+          <% end %>
+        <% else %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="user-bet">
+      <div>
+        <h2><strong>Rhum Mono</strong></h2>
+        <% unless @bets.includes(:boat).where(user: @league.user, boat: { category: "Rhum Mono" }).empty? %>
+          <% @bets.includes(:boat).where(user: @league.user, boat: { category: "Rhum Mono" }).sort_by(&:position).each do |rhum_mono| %>
+            <p><%= rhum_mono.position%>. <em><%= rhum_mono.boat.name %></em></p>
+          <% end %>
+        <% else %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="user-bet">
+      <div>
+        <h2><strong>Rhum Multi</strong></h2>
+        <% unless @bets.includes(:boat).where(user: @league.user, boat: { category: "Rhum Multi" }).empty? %>
+          <% @bets.includes(:boat).where(user: @league.user, boat: { category: "Rhum Multi" }).sort_by(&:position).each do |rhum_multi| %>
+            <p><%= rhum_multi.position%>. <em><%= rhum_multi.boat.name %></p>
+          <% end %>
+        <% else %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% @admissions.each do |admission| %>
+  <div class="bets-user">
+    <h2 class='bet-user text-center'><%= admission.user.first_name %> <%= admission.user.last_name %></h2>
+    <div class="user-bets">
+      <div class="user-bet">
         <div>
           <h2><strong>Ultim</strong></h2>
           <% unless @bets.includes(:boat).where(user: admission.user, boat: { category: "Ultim" }).empty? %>
             <% @bets.includes(:boat).where(user: admission.user,boat: { category: "Ultim" }).sort_by(&:position).each do |ultim| %>
-              <p><%= ultim.position%>. <em><%= ultim.boat.name %></em> - <%= ultim.boat.skipper_last_name %> <%= ultim.boat.skipper_first_name %></p>
+              <p><%= ultim.position%>. <em><%= ultim.boat.name %></em></p>
             <% end %>
             <% else %>
           <% end %>
         </div>
       </div>
 
-      <div class="card-bet" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05125_300x400.jpg")%>')">
+      <div class="user-bet">
         <div>
           <h2><strong>IMOCA</strong></h2>
           <% unless @bets.includes(:boat).where(user: admission.user, boat: { category: "IMOCA" }).empty? %>
             <% @bets.includes(:boat).where(user: admission.user,boat: { category: "IMOCA" }).sort_by(&:position).each do |imoca| %>
-              <p><%= imoca.position%>. <em><%= imoca.boat.name %></em> - <%= imoca.boat.skipper_last_name %> <%= imoca.boat.skipper_first_name %></p>
+              <p><%= imoca.position%>. <em><%= imoca.boat.name %></em></p>
             <% end %>
           <% else %>
           <% end %>
         </div>
       </div>
 
-      <div class="card-bet" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05145_300x400.jpg")%>')">
+      <div class="user-bet">
         <div>
           <h2><strong>Ocean Fifty</strong></h2>
           <% unless @bets.includes(:boat).where(user: admission.user, boat: { category: "Ocean fifty" }).empty? %>
             <% @bets.includes(:boat).where(user: admission.user,boat: { category: "Ocean fifty" }).sort_by(&:position).each do |ocean_fifty| %>
-              <p><%= ocean_fifty.position%>. <em><%= ocean_fifty.boat.name %></em> - <%= ocean_fifty.boat.skipper_last_name %> <%= ocean_fifty.boat.skipper_first_name %></p>
+              <p><%= ocean_fifty.position%>. <em><%= ocean_fifty.boat.name %></em></p>
             <% end %>
           <% else %>
           <% end %>
         </div>
       </div>
 
-      <div class="card-bet" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05139_300x400.jpg")%>')">
+      <div class="user-bet">
         <div>
           <h2><strong>Class 40</strong></h2>
           <% unless @bets.includes(:boat).where(user: admission.user, boat: { category: "Class 40" }).empty? %>
             <% @bets.includes(:boat).where(user: admission.user,boat: { category: "Class 40" }).sort_by(&:position).each do |class_40| %>
-              <p><%= class_40.position%>. <em><%= class_40.boat.name %></em> - <%= class_40.boat.skipper_last_name %> <%= class_40.boat.skipper_first_name %></p>
+              <p><%= class_40.position%>. <em><%= class_40.boat.name %></em></p>
             <% end %>
           <% else %>
           <% end %>
         </div>
       </div>
 
-      <div class="card-bet" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05296_300x400.jpg")%>')">
+      <div class="user-bet">
         <div>
           <h2><strong>Rhum Mono</strong></h2>
           <% unless @bets.includes(:boat).where(user: admission.user, boat: { category: "Rhum Mono" }).empty? %>
             <% @bets.includes(:boat).where(user: admission.user,boat: { category: "Rhum Mono" }).sort_by(&:position).each do |rhum_mono| %>
-              <p><%= rhum_mono.position%>. <em><%= rhum_mono.boat.name %></em> - <%= rhum_mono.boat.skipper_last_name %> <%= rhum_mono.boat.skipper_first_name %></p>
+              <p><%= rhum_mono.position%>. <em><%= rhum_mono.boat.name %></em></p>
             <% end %>
           <% else %>
           <% end %>
         </div>
       </div>
 
-      <div class="card-bet" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("DSC05092_300x400.jpg")%>')">
+      <div class="user-bet">
         <div>
           <h2><strong>Rhum Multi</strong></h2>
           <% unless @bets.includes(:boat).where(user: admission.user, boat: { category: "Rhum Multi" }).empty? %>
             <% @bets.includes(:boat).where(user: admission.user,boat: { category: "Rhum Multi" }).sort_by(&:position).each do |rhum_multi| %>
-              <p><%= rhum_multi.position%>. <em><%= rhum_multi.boat.name %></em> - <%= rhum_multi.boat.skipper_last_name %> <%= rhum_multi.boat.skipper_first_name %></p>
+              <p><%= rhum_multi.position%>. <em><%= rhum_multi.boat.name %></p>
             <% end %>
           <% else %>
           <% end %>
         </div>
       </div>
-
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
+<%# </div> %>

@@ -1,0 +1,38 @@
+.bets-user {
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 15px;
+  }
+}
+
+.user-bets {
+  display: grid;
+  height: 200px;
+  grid-template: repeat(6, 1fr) / repeat(6, 1fr);
+  align-items: center;
+}
+
+.user-bet {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0 20px;
+  h2 {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+}
