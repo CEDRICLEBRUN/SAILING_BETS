@@ -19,6 +19,11 @@
           <li class="nav-item active">
             <%= link_to "Bateaux", boats_path, class: "nav-link" %>
           </li>
+          <% if League.where(user: current_user).any? %>
+            <li class="nav-item active">
+              <%= link_to "Adhésions", users_dashboard_path, class: "nav-link" %>
+            </li>
+          <% end %>
           <li class="nav-item dropdown">
             <%= image_tag "DSC_6675.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

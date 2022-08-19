@@ -7,9 +7,9 @@ class LeaguesController < ApplicationController
   end
 
   def show
-    if League.find(params[:id]).admissions.where(user: current_user).present? || League.find(params[:id]).user == current_user
+    if League.find(params[:id]).admissions.where(user: current_user, status: "accepted").present? || League.find(params[:id]).user == current_user
       @league = League.find(params[:id])
-      @admissions = Admission.where(league: @league)
+      @admissions = Admission.where(league: @league, status: "accepted")
       @bets = Bet.all
     else
       flash[:alert] = "Pas accès à cette ligue..."

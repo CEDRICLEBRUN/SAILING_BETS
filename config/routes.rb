@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'admissions/new'
-  get 'admissions/create'
-  get 'admissions/delete'
   devise_for :users
   root to: "pages#home"
 
@@ -14,4 +11,8 @@ Rails.application.routes.draw do
   resources :leagues, only: [:index, :show, :new, :create, :edit, :update, :delete] do
     resources :admissions, only: [:new, :create, :delete]
   end
+
+  get 'users/dashboard'
+  patch "/admissions/:id/reject", to: "admissions#reject", as: "admission_reject"
+  patch "/admissions/:id/accept", to: "admissions#accept", as: "admission_accept"
 end

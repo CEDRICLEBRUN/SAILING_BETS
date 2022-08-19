@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_15_102853) do
   enable_extension "plpgsql"
 
   create_table "admissions", force: :cascade do |t|
-    t.string "status", default: "Pending"
+    t.string "status", default: "pending"
     t.bigint "user_id", null: false
     t.bigint "league_id", null: false
     t.datetime "created_at", null: false

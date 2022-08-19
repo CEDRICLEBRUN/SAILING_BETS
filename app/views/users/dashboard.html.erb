@@ -1,0 +1,11 @@
+<h1 class="text-center my-4">Demandes d'adhésion à mes ligues</h1>
+
+<% @requests.each do |request| %>
+  <div class="d-flex justify-content-around">
+    <% if request.status == "pending" %>
+      <h3><%= request.league.title %> <%= request.user.first_name %> <%= request.user.last_name %></h3>
+      <div><%= link_to "Accepter", admission_accept_path(request), method: :patch, class: "btn-join" %></div>
+      <div><%= link_to "Refuser", admission_reject_path(request), method: :patch, class: "btn-quit" %></div>
+    <% end %>
+  </div>
+<% end %>
