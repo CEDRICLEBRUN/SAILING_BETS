@@ -83,9 +83,21 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   text-align: center;
 }
+
 .card-boat a {
   text-decoration: none;
   color: black;
   padding: 3px;
   font-size: 20px;
+}
+
+.card-result {
+  margin: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
 }

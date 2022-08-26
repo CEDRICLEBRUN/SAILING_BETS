@@ -1,0 +1,33 @@
+<h1>Results#index</h1>
+
+<div class="cards my-4">
+  <% Boat::BOATCLASSES.each do |category| %>
+    <%= link_to results_path(category: category) do %>
+      <div class="card-class <%= (params[:category] == category ? "act" : "dis") %>">
+        <%= category %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="container my-5">
+  <% @boats.each do |boat| %>
+    <div class="d-flex align-items-center">
+      <span><strong><%= boat.name %></strong> - <%= boat.skipper_last_name %> <%= boat.skipper_first_name%></span>
+      <div class="card-result">
+        <% if boat.result.nil? %>
+          <%= simple_form_for [boat, @result], wrapper: :inline_form, html: { class: "row row-cols-lg-auto g-3 align-items-center" } do |f| %>
+            <%= f.input :result_position, label: false %>
+            <%= f.submit "Enregistrer", class: "btn-result" %>
+          <% end %>
+        <% else %>
+          <%= boat.result.result_position %>
+          <%= simple_form_for [boat, boat.result], wrapper: :inline_form, html: { class: "row row-cols-lg-auto g-3 align-items-center mx-3" } do |f| %>
+            <%= f.input :result_position, label: false %>
+            <%= f.submit "Enregistrer", class: "btn-result" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

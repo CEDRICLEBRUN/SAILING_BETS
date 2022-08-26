@@ -1,6 +1,6 @@
 class Boat < ApplicationRecord
   has_many :bets
-  has_many :results
+  has_one :result
 
   ultims = []
   imocas = []
@@ -30,4 +30,9 @@ class Boat < ApplicationRecord
   CLASS40 = class_40
   RHUMMONO = rhum_mono
   RHUMMULTI = rhum_multi
+  BOATCLASSES = ["Ultim", "IMOCA", "Ocean Fifty", "Class 40", "Rhum Mono", "Rhum Multi"]
+
+  def result
+    Result.where(boat: self).first
+  end
 end
