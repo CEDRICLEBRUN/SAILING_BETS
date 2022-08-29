@@ -84,6 +84,7 @@
 <% @admissions.each do |admission| %>
   <div class="bets-user">
     <h2 class='bet-user text-center'><%= admission.user.first_name %> <%= admission.user.last_name %></h2>
+    <h3><strong><%= admission.user.display_score_total %></strong></h3>
     <div class="user-bets">
       <div class="user-bet">
         <div>
@@ -159,4 +160,3 @@
     </div>
   </div>
 <% end %>
-<%# </div> %>

@@ -8,27 +8,33 @@ class Bet < ApplicationRecord
 
   def score_compute!
     boat = Boat.find(self.boat.id)
-    if boat.result == nil
-      self.score = 100
+    if boat.result.nil?
+      case Boat.where(category: boat.category).count
+      when 1..10
+        self.score = Boat.where(category: boat.category).count + 1
+      when 11..20
+        self.score = 12
+      when 21..30
+        self.score = 13
+      when 31..40
+        self.score = 14
+      when 41..50
+        self.score = 15
+      end
     elsif boat.result.result_position == self.position
       self.score = self.position - 3
     elsif boat.result.result_position in 1..3
       self.score = boat.result.result_position - 1
-    else
-      case boat.category
-      when "Ultim"
-        self.score = boat.result.result_position
-      when "IMOCA"
-        self.score = boat.result.result_position
-      when "Ocean Fifty"
-        self.score = boat.result.result_position
-      when "Class 40"
-        self.score = boat.result.result_position
-      when "Rhun Mono"
-        self.score = boat.result.result_position
-      when "Rhum Multi"
-        self.score = boat.result.result_position
-      end
+    elsif boat.result.result_position in 4..10
+      self.score = boat.result.result_position
+    elsif boat.result.result_position in 11..20
+      self.score = 11
+    elsif boat.result.result_position in 21..30
+      self.score = 12
+    elsif boat.result.result_position in 31..40
+      self.score = 13
+    elsif boat.result.result_position in 41..50
+      self.score = 14
     end
     self.save!
   end
