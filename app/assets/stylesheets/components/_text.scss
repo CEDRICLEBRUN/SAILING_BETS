@@ -1,0 +1,18 @@
+h1 {
+  text-align: center;
+  color: $blue;
+  font-family: $headers-font;
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 48px;
+  padding: 10px 0;
+}
+
+h2 {
+  text-align: center;
+  font-family: $headers-font;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  font-size: large;
+}

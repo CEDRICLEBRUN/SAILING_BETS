@@ -1,16 +1,16 @@
 <div class="navbar-top flex justify-between items-center">
   <div class="navbar-top-left">
-    <%= link_to "Accueil", root_path %>
+    <h2><%= link_to "Accueil", root_path %></h2>
   </div>
 
   <div class="navbar-top-right flex justify-between">
     <% if user_signed_in? %>
-      <%= link_to "Mes paris", bets_path %>
-      <%= link_to "Mes ligues", leagues_path %>
-      <%= link_to "Bateaux", boats_path %>
-      <%= link_to "Mon compte", users_dashboard_path %>
+      <h2><%= link_to "Paris", bets_path %></h2>
+      <h2><%= link_to "Ligues", leagues_path %></h2></h2>
+      <h2><%= link_to "Bateaux", boats_path %></h2>
+      <h2><%= link_to "Mon compte", users_dashboard_path %></h2>
     <% else %>
-        <%= link_to "Se connecter", new_user_session_path %>
+      <h2><%= link_to "Se connecter", new_user_session_path %></h2>
     <% end %>
   </div>
 </div>

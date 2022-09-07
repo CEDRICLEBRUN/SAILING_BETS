@@ -1,4 +1,4 @@
-<h1 class="text-center m-3">Mes paris !</h1>
+<h1>Mes paris !</h1>
 
 <div class="cards-bets">
 
@@ -9,7 +9,7 @@
         <% @ultims.each do |ultim| %>
           <p><%= ultim.position%>. <em><%= ultim.boat.name %></em> - <%= ultim.boat.skipper_last_name %> <%= ultim.boat.skipper_first_name %></p>
         <% end %>
-        <%= link_to "Je modifie", bets_change_path(category: "Ultim"), class: "btn-bet" %>
+        <div><%= link_to "Je modifie", bets_change_path(category: "Ultim"), class: "btn-bet" %></div>
       <% else %>
         <%= link_to "Je parie !", new_bet_path(category: "Ultim"), class: "btn-bet" %>
       <% end %>
@@ -23,7 +23,7 @@
         <% @imocas.each do |imoca| %>
           <p><%= imoca.position%>. <em><%= imoca.boat.name %></em> - <%= imoca.boat.skipper_last_name %> <%= imoca.boat.skipper_first_name %></p>
         <% end %>
-        <%= link_to "Je modifie", bets_change_path(category: "IMOCA"), class: "btn-bet" %>
+        <div><%= link_to "Je modifie", bets_change_path(category: "IMOCA"), class: "btn-bet" %></div>
       <% else %>
         <%= link_to "Je parie !", new_bet_path(category: "IMOCA"), class: "btn-bet" %>
       <% end %>
