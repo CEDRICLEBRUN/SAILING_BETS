@@ -82,16 +82,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_184932) do
     t.index ["user_id"], name: "index_leagues_on_user_id"
   end
 
-  create_table "registrations", force: :cascade do |t|
-    t.string "status", default: "Pending"
-    t.bigint "user_id", null: false
-    t.bigint "league_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["league_id"], name: "index_registrations_on_league_id"
-    t.index ["user_id"], name: "index_registrations_on_user_id"
-  end
-
   create_table "results", force: :cascade do |t|
     t.integer "result_position"
     t.bigint "boat_id", null: false
@@ -121,7 +111,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_184932) do
   add_foreign_key "bets", "boats"
   add_foreign_key "bets", "users"
   add_foreign_key "leagues", "users"
-  add_foreign_key "registrations", "leagues"
-  add_foreign_key "registrations", "users"
   add_foreign_key "results", "boats"
 end

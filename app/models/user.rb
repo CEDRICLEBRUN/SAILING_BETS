@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :bets
   has_many :leagues
   has_many :admissions
+  has_one_attached :photo
 
   def display_score_total
     total_score = 0
