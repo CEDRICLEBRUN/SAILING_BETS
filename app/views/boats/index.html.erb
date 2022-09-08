@@ -36,14 +36,15 @@
   <% end %>
 </div>
 
-
-<div class="container my-5">
-  <% @boats.each do |boat| %>
-    <div class="card-boat d-flex align-items-center">
-      <span><strong><%= boat.name %></strong> - <%= boat.skipper_last_name %> <%= boat.skipper_first_name%></span>
-      <%= link_to boat.url_link, target:"_blank" do %>
-        <i class="fa-solid fa-circle-info"></i>
-      <% end %>
-    </div>
-  <% end %>
+<div class="flex justify-around">
+  <div class="container my-5">
+    <% @boats.each do |boat| %>
+      <div class="card-boat flex items-center">
+        <span><strong><%= boat.name %></strong> - <%= boat.skipper_last_name %> <%= boat.skipper_first_name%></span>
+        <%= link_to boat.url_link, target:"_blank" do %>
+          <i class="fa-solid fa-circle-info"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
