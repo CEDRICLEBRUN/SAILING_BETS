@@ -8,4 +8,9 @@
       <div><%= link_to "Refuser", admission_reject_path(request), method: :patch, class: "btn-quit" %></div>
     <% end %>
   </div>
+
 <% end %>
+
+<div class="flex justify-around my-5">
+  <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "btn-league" %>
+</div>

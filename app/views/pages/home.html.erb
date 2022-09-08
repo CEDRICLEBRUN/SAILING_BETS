@@ -4,6 +4,4 @@
     <h1>Bienvenue sur le site des paris de la Route du Rhum !</h1>
     <h1 class="wait-days">J-<%= DateTime.parse("06-11-2022").mjd - DateTime.now.mjd %></h1>
     <p><%= link_to "Pariez !", bets_path, class: "btn-main my-4" %></p>
-    <p class="my-5"></p>
-    <p><%= link_to "Voir tous les bateaux", boats_path, class: "btn-sec my-4" %></p>
 </div>
