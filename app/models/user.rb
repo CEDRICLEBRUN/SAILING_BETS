@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :leagues
   has_many :admissions
   has_one_attached :photo
+  validates :first_name, :last_name, presence: true
 
   def display_score_total
     total_score = 0
