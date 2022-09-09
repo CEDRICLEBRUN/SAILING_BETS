@@ -1,9 +1,12 @@
 <h1 class='text-center my-4'>Je crée ma ligue</h1>
 
 <div class="adding-league-form">
-  <%= simple_form_for  @league do |f| %>
+  <%= simple_form_for @league do |f| %>
     <div class="row">
       <div class="col-10"><%= f.input :title, label: false, placeholder: "Le nom de ta ligue"%></div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-10"><%= f.input :logo, label: false, placeholder: "Le logo de ta ligue", as: :file %></div>
     </div>
     <div class="d-grid col-3 mx-auto">
       <%= f.submit "Créer ma ligue", class: "btn-league" %>

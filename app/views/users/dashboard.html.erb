@@ -1,15 +1,30 @@
-<h1 class="text-center my-4">Demandes d'adhésion à mes ligues</h1>
+<div class="border border-1 mx-3 my-3 pb-3 px-3">
+  <h1>Mes Ligues (<%= @my_leagues.count %>)</h1>
+  <div class="grid grid-cols-4 gap-5">
+    <% @my_leagues.each do |league| %>
+      <% if league.user == current_user || league.admissions.where(user: current_user).first.status == "accepted" %>
+        <%= link_to league_path(league) do %>
+          <%= cl_image_tag league.logo.key, class: "border-solid border-2 rounded-full w-16 h-16 object-cover m-auto" %>
+        <% end %>
+      <% elsif league.admissions.where(user: current_user).first.status == "pending" %>
+        <%= cl_image_tag league.logo.key, class: "border-solid border-2 rounded-full w-16 h-16 object-cover m-auto opacity-50" %>
+      <% else %>
+        <%= cl_image_tag league.logo.key, class: "border-solid border-2 rounded-full w-16 h-16 object-cover m-auto bg-sky-500/50" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
-<% @requests.each do |request| %>
-  <div class="d-flex justify-content-around">
-    <% if request.status == "pending" %>
+<div class="border border-1 mx-3 my-3 pb-3 px-3">
+  <h1>Demandes d'adhésion à mes ligues (<%= @requests.count %>)</h1>
+  <div class="grid grid-cols-4 gap-5">
+    <% @requests.each do |request| %>
       <h3><%= request.league.title %> <%= request.user.first_name %> <%= request.user.last_name %></h3>
       <div><%= link_to "Accepter", admission_accept_path(request), method: :patch, class: "btn-join" %></div>
       <div><%= link_to "Refuser", admission_reject_path(request), method: :patch, class: "btn-quit" %></div>
     <% end %>
   </div>
-
-<% end %>
+</div>
 
 <div class="flex justify-around my-5">
   <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "btn-league" %>

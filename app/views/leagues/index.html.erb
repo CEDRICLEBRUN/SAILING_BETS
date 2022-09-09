@@ -1,5 +1,5 @@
 <div class="index-leagues">
-  <div class="d-flex justify-content-around my-3">
+  <div class="flex justify-around my-3">
     <%= link_to 'Mes ligues', leagues_path(choice: "my_leagues"), class: (params[:choice] == "my_leagues" || params[:choice].nil? ? "btn-league-act" : "btn-league-dis") %>
     <%= link_to 'Toutes les ligues', leagues_path(choice: 'all_leagues'), class: (params[:choice] == "all_leagues" ? "btn-league-act" : "btn-league-dis") %>
   </div>

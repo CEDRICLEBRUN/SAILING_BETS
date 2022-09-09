@@ -17,4 +17,12 @@ class User < ApplicationRecord
     end
     return total_score
   end
+
+  def display_score_by_category
+    total_score = 0
+    self.bets.each do |bet|
+      total_score += bet.score
+    end
+    return total_score
+  end
 end
