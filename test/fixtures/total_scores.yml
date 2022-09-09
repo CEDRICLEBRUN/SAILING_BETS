@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ultim: 1
+  imoca: 1
+  ocean_fifty: 1
+  class_fourty: 1
+  rhum_mono: 1
+  rhum_multi: 1
+  user: one
+
+two:
+  ultim: 1
+  imoca: 1
+  ocean_fifty: 1
+  class_fourty: 1
+  rhum_mono: 1
+  rhum_multi: 1
+  user: two

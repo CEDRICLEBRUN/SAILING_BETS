@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_05_184932) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_09_091111) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -90,6 +90,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_184932) do
     t.index ["boat_id"], name: "index_results_on_boat_id"
   end
 
+  create_table "total_scores", force: :cascade do |t|
+    t.integer "ultim"
+    t.integer "imoca"
+    t.integer "ocean_fifty"
+    t.integer "class_fourty"
+    t.integer "rhum_mono"
+    t.integer "rhum_multi"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_total_scores_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -112,4 +125,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_184932) do
   add_foreign_key "bets", "users"
   add_foreign_key "leagues", "users"
   add_foreign_key "results", "boats"
+  add_foreign_key "total_scores", "users"
 end
