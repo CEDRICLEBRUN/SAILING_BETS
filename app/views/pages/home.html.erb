@@ -2,6 +2,13 @@
 <div class="home banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('<%=image_url("DSC05028.JPG")%>')">
   <div class="banner-top">
     <h1>Bienvenue sur le site des paris de la Route du Rhum !</h1>
-    <h1 class="wait-days">J-<%= DateTime.parse("06-11-2022").mjd - DateTime.now.mjd %></h1>
+
+    <div class="timer-card flex justify-center items-center">
+      <div class="timer-icone">
+        <p><i class="fas fa-hourglass-half"></i></p>
+      </div>
+      <div class="timer-time" data-controller="countdown-start" data-countdown-start-date-value="Nov 06, 2022 14:02:00"></div>
+    </div>
+
     <p><%= link_to "Pariez !", bets_path, class: "btn-main my-4" %></p>
 </div>
