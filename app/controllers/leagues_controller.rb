@@ -45,7 +45,7 @@ class LeaguesController < ApplicationController
   private
 
   def league_params
-    params.require(:league).permit(:title)
+    params.require(:league).permit(:title, :logo)
   end
 
   def score_calculation
