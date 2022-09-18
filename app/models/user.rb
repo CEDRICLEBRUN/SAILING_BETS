@@ -4,16 +4,35 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :bets
-  has_many :leagues
-  has_many :admissions
-  has_many :total_scores
+  has_many :bets, dependent: :destroy
+  has_many :leagues, dependent: :destroy
+  has_many :admissions, dependent: :destroy
+  has_many :total_scores, dependent: :destroy
   has_one_attached :photo
   validates :first_name, :last_name, presence: true
 
   def display_score_total
     scores = self.total_scores.first
     score_total = scores.ultim + scores.imoca + scores.ocean_fifty + scores.class_fourty + scores.rhum_mono + scores.rhum_multi
+  end
+
+  def display_score_by_category(category)
+    scores = self.total_scores.first
+    case category
+    when "Ultim"
+      score = scores.ultim
+    when "IMOCA"
+      score = scores.imoca
+    when "Ocean Fifty"
+      score = scores.ocean_fifty
+    when "Class 40"
+      score = scores.class_fourty
+    when "Rhum Mono"
+      score = scores.rhum_mono
+    when "Rhum Multi"
+      score = scores.rhum_multi
+    end
+    score
   end
 
   def all_scores_with_boat_category

@@ -56,5 +56,9 @@ class LeaguesController < ApplicationController
         bet.score_compute!
       end
     end
+
+    players.each do |player|
+      player.total_scores.first.calcul_score
+    end
   end
 end

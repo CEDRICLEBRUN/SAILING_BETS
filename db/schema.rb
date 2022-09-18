@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_09_091111) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_16_135224) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -91,12 +91,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_091111) do
   end
 
   create_table "total_scores", force: :cascade do |t|
-    t.integer "ultim"
-    t.integer "imoca"
-    t.integer "ocean_fifty"
-    t.integer "class_fourty"
-    t.integer "rhum_mono"
-    t.integer "rhum_multi"
+    t.integer "ultim", default: 0
+    t.integer "imoca", default: 0
+    t.integer "ocean_fifty", default: 0
+    t.integer "class_fourty", default: 0
+    t.integer "rhum_mono", default: 0
+    t.integer "rhum_multi", default: 0
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -2,6 +2,12 @@ class TotalScore < ApplicationRecord
   belongs_to :user
 
   def calcul_score
+    self.ultim = 0
+    self.imoca = 0
+    self.ocean_fifty = 0
+    self.class_fourty = 0
+    self.rhum_mono = 0
+    self.rhum_multi = 0
     scores = self.user.all_scores_with_boat_category
     scores.each do |score|
       case score.first
@@ -19,5 +25,6 @@ class TotalScore < ApplicationRecord
         self.rhum_multi += score.last
       end
     end
+    self.save
   end
 end

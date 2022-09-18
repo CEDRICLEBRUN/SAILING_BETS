@@ -20,6 +20,8 @@ class Bet < ApplicationRecord
         self.score = 14
       when 41..50
         self.score = 15
+      when 51..60
+        self.score = 16
       end
     elsif boat.result.result_position == self.position
       self.score = self.position - 3

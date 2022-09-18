@@ -46,3 +46,11 @@ CSV.foreach(filepath, headers: :first_row) do |row|
 end
 
 puts 'Creating boats done'
+
+puts 'Creating total_scores'
+
+User.all.each do |user|
+  TotalScore.create(user: user)
+end
+
+puts 'Creating total_scores done'
