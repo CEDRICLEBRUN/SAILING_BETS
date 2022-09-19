@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :boats, only: [:index] do
-    resources :results, only: [:new, :create, :edit, :update, :delete]
+    resources :results, only: [:new, :create, :edit, :update, :destroy]
   end
 
   resources :bets, only: [:index, :new, :create]
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :results, only: [:index]
 
   resources :leagues, only: [:index, :show, :new, :create, :edit, :update, :delete] do
-    resources :admissions, only: [:new, :create, :delete]
+    resources :admissions, only: [:new, :create, :destroy]
   end
 
   get 'users/dashboard'

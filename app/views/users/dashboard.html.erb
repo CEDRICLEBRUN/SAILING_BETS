@@ -6,11 +6,14 @@
         <% if league.user == current_user || league.admissions.where(user: current_user).first.status == "accepted" %>
           <%= link_to league_path(league) do %>
             <%= cl_image_tag league.logo.key, class: "border-solid border-2 rounded-full w-16 h-16 object-cover m-auto" %>
+            <h2><%= league.title %></h2>
           <% end %>
         <% elsif league.admissions.where(user: current_user).first.status == "pending" %>
           <%= cl_image_tag league.logo.key, class: "border-solid border-2 rounded-full w-16 h-16 object-cover m-auto opacity-50" %>
+          <h2><%= league.title %></h2>
         <% else %>
           <%= cl_image_tag league.logo.key, class: "border-solid border-2 rounded-full w-16 h-16 object-cover m-auto bg-sky-500/50" %>
+          <h2><%= league.title %></h2>
         <% end %>
       <% end %>
     <% end %>
