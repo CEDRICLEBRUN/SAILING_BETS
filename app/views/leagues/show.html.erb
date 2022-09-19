@@ -1,7 +1,29 @@
-<h1 class="text-center my-3"><%= @league.title %></h1>
+<!-- En-tête avec la Ligue -->
+<div class="title flex flex-col items-center relative">
+  <h1>Classement Général</h1>
+  <h1 class="mb-3"><%= @league.title %></h1>
+  <%= cl_image_tag @league.logo.key, class: "logo-league" %>
+</div>
 
-<%# <div class="container"> %>
-
+<!-- Ranking -->
+  <% @users.each_with_index do |user, index| %>
+  <div class="flex items-center justify-around">
+    <% if user == current_user %>
+      <div class="ranking-card ranking-card-user flex justify-between items-center">
+    <% else %>
+      <div class="ranking-card flex justify-between items-center">
+    <% end %>
+        <p><strong><%= index + 1 %></strong></p>
+        <div>
+          <p><%= user.first_name %> <%= user.last_name %></p>
+        </div>
+        <div class="ranking-card-points flex items-center">
+          <p class="score"><%= user.display_score_total %></p>
+          <p>pts</p>
+        </div>
+      </div>
+  </div>
+  <% end %>
 
 <div class="bets-user">
   <h2 class='bet-user text-center'><%= @league.user.first_name %> <%= @league.user.last_name %></h2>

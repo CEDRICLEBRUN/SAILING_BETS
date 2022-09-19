@@ -5,14 +5,14 @@
       <% @my_leagues.each do |league| %>
         <% if league.user == current_user || league.admissions.where(user: current_user).first.status == "accepted" %>
           <%= link_to league_path(league) do %>
-            <%= cl_image_tag league.logo.key, class: "border-solid border-2 rounded-full w-16 h-16 object-cover m-auto" %>
+            <%= cl_image_tag league.logo.key, class: "logo-league" %>
             <h2><%= league.title %></h2>
           <% end %>
         <% elsif league.admissions.where(user: current_user).first.status == "pending" %>
-          <%= cl_image_tag league.logo.key, class: "border-solid border-2 rounded-full w-16 h-16 object-cover m-auto opacity-50" %>
+          <%= cl_image_tag league.logo.key, class: "logo-league opacity-50" %>
           <h2><%= league.title %></h2>
         <% else %>
-          <%= cl_image_tag league.logo.key, class: "border-solid border-2 rounded-full w-16 h-16 object-cover m-auto bg-sky-500/50" %>
+          <%= cl_image_tag league.logo.key, class: "logo-league bg-sky-500/50" %>
           <h2><%= league.title %></h2>
         <% end %>
       <% end %>
@@ -26,8 +26,16 @@
     <% unless @requests.empty? %>
       <% @requests.each do |request| %>
         <h3><%= request.league.title %> <%= request.user.first_name %> <%= request.user.last_name %></h3>
-        <div><%= link_to "Accepter", admission_accept_path(request), method: :patch, class: "btn-join" %></div>
-        <div><%= link_to "Refuser", admission_reject_path(request), method: :patch, class: "btn-quit" %></div>
+        <div>
+          <%= link_to admission_accept_path(request), method: :patch, class: "btn-join" do %>
+            <i class="fas fa-check-circle"></i>
+          <% end %>
+        </div>
+        <div>
+          <%= link_to admission_reject_path(request), method: :patch, class: "btn-quit" do %>
+            <i class="fas fa-times-circle"></i>
+          <% end %>
+        </div>
       <% end %>
     <% end %>
   </div>

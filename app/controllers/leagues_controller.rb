@@ -11,6 +11,7 @@ class LeaguesController < ApplicationController
       @league = League.find(params[:id])
       @admissions = Admission.where(league: @league, status: "accepted")
       @bets = Bet.all
+      @users = User.accepted_in_league(@league)
       score_calculation
     else
       flash[:alert] = "Pas accès à cette ligue..."
