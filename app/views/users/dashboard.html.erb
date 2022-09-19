@@ -18,23 +18,32 @@
       <% end %>
     <% end %>
   </div>
+  <div class="flex place-content-end">
+    <%= link_to "Rejoindre une ligue", leagues_path, class: "btn-league-act" %>
+  </div>
 </div>
 
 <div class="border border-1 mx-3 my-3 pb-3 px-3">
   <h1>Demandes d'adhésion à mes ligues (<%= @requests.count %>)</h1>
-  <div class="grid grid-cols-4 gap-5">
+  <div>
     <% unless @requests.empty? %>
       <% @requests.each do |request| %>
-        <h3><%= request.league.title %> <%= request.user.first_name %> <%= request.user.last_name %></h3>
-        <div>
-          <%= link_to admission_accept_path(request), method: :patch, class: "btn-join" do %>
-            <i class="fas fa-check-circle"></i>
-          <% end %>
-        </div>
-        <div>
-          <%= link_to admission_reject_path(request), method: :patch, class: "btn-quit" do %>
-            <i class="fas fa-times-circle"></i>
-          <% end %>
+        <div class="admission-card flex items-center justify-around">
+          <div class="admission-info">
+            <%= cl_image_tag request.league.logo.key, class: "logo-league" %>
+            <h2><%= request.league.title %></h2>
+          </div>
+          <div class="admission-user">
+            <p><%= request.user.first_name %> <%= request.user.last_name %></p>
+          </div>
+          <div class="admission-validation">
+            <%= link_to admission_accept_path(request), method: :patch, class: "btn-join" do %>
+              <i class="fas fa-check-circle"></i>
+            <% end %>
+            <%= link_to admission_reject_path(request), method: :patch, class: "btn-quit" do %>
+              <i class="fas fa-times-circle"></i>
+            <% end %>
+          </div>
         </div>
       <% end %>
     <% end %>

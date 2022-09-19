@@ -1,12 +1,21 @@
-<div class="index-leagues">
-  <div class="flex justify-around my-3">
-    <%= link_to 'Mes ligues', leagues_path(choice: "my_leagues"), class: (params[:choice] == "my_leagues" || params[:choice].nil? ? "btn-league-act" : "btn-league-dis") %>
-    <%= link_to 'Toutes les ligues', leagues_path(choice: 'all_leagues'), class: (params[:choice] == "all_leagues" ? "btn-league-act" : "btn-league-dis") %>
-  </div>
-
-  <% if params[:choice] == 'my_leagues' || params[:choice].nil? %>
-    <%= render "shared/my_leagues" %>
-  <% elsif params[:choice] == 'all_leagues' %>
-    <%= render "shared/all_leagues" %>
+<div class="container">
+  <% if @leagues %>
+    <% @leagues.each do |league| %>
+      <div class="league d-flex align-items-center">
+        <%= cl_image_tag league.logo.key, class: "border-solid border-2 rounded-full w-16 h-16 object-cover m-auto" %>
+        <h2><%= league.title %></h2>
+        <% if league.admissions.where(user: current_user).present? %>
+          <%= link_to "Quitter", league_admission(league, league.admissions.where(user: current_user).first), class: "btn-quit", method: :delete %>
+        <% elsif league.user != current_user %>
+          <%= simple_form_for [league, @admission] do |f| %>
+            <%= f.submit "Rejoindre", class: "btn-join" %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
+
+  <div class="flex justify-around my-5">
+    <%= link_to "Créer ma ligue", new_league_path, class: "btn-league" %>
+  </div>
 </div>
