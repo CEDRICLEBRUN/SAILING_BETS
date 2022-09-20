@@ -14,7 +14,7 @@
 
 .user-bets {
   display: grid;
-  height: 200px;
+  height: 230px;
   grid-template: repeat(6, 1fr) / repeat(6, 1fr);
   align-items: center;
 }
@@ -22,7 +22,7 @@
 .user-bet {
   background-size: cover;
   background-position: center;
-  height: 200px;
+  height: 230px;
   width: 80%;
   display: flex;
   justify-content: center;
@@ -35,4 +35,11 @@
   h2 {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   }
+  p {
+    padding: 5px;
+  }
+}
+
+.not-showed {
+  display: none;
 }

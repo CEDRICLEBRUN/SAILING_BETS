@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :total_scores, dependent: :destroy
   has_one_attached :photo
   validates :first_name, :last_name, presence: true
+  validates :bets, length: { maximum: 18 }
 
   def display_score_total
     scores = self.total_scores.first
@@ -59,5 +60,13 @@ class User < ApplicationRecord
     #   end
     # end
     # players
+  end
+
+  def bets_by_category(category)
+    bets = []
+    self.bets.each do |bet|
+      bets << bet if bet.boat.category == category
+    end
+    bets
   end
 end

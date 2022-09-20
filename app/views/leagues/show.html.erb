@@ -6,58 +6,32 @@
 </div>
 
 <!-- Ranking -->
-  <% @users.each_with_index do |user, index| %>
-  <div class="flex items-center justify-around">
-    <% if user == current_user %>
-      <div class="ranking-card ranking-card-user flex justify-between items-center">
-    <% else %>
-      <div class="ranking-card flex justify-between items-center">
-    <% end %>
-        <p><strong><%= index + 1 %></strong></p>
-        <div>
-          <p><%= user.first_name %> <%= user.last_name %></p>
+<% @users.each_with_index do |user, index| %>
+  <div data-controller="show-bets" data-action="click->show-bets#show">
+    <div class="flex items-center justify-around">
+      <% if user == current_user %>
+        <div class="ranking-card ranking-card-user flex justify-between items-center">
+      <% else %>
+        <div class="ranking-card flex justify-between items-center">
+      <% end %>
+          <p><strong><%= index + 1 %></strong></p>
+          <div>
+            <p><%= user.first_name %> <%= user.last_name %></p>
+          </div>
+          <div class="ranking-card-points flex items-center">
+            <p class="score"><%= user.display_score_total %></p>
+            <p>pts</p>
+          </div>
         </div>
-        <div class="ranking-card-points flex items-center">
-          <p class="score"><%= user.display_score_total %></p>
-          <p>pts</p>
-        </div>
-      </div>
-  </div>
-  <% end %>
-
-<div class="bets-user">
-  <h2 class='bet-user text-center'><%= @league.user.first_name %> <%= @league.user.last_name %></h2>
-  <h3><strong><%= @league.user.display_score_total %></strong></h3>
-  <div class="user-bets">
-    <% Boat::BOATCLASSES.each do |boat_class| %>
-      <div class="user-bet">
-        <div>
-          <h2><strong><%= boat_class %></strong></h2>
-          <h3><strong><%= @league.user.display_score_by_category(boat_class) %></strong></h3>
-          <% unless @bets.includes(:boat).where(user: @league.user, boat: { category: boat_class }).empty? %>
-            <% @bets.includes(:boat).where(user: @league.user, boat: { category: boat_class }).sort_by(&:position).each do |bet| %>
-              <p><%= bet.position%>. <em><%= bet.boat.name %></em></p>
-            <% end %>
-            <% else %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-<% @admissions.each do |admission| %>
-  <div class="bets-user">
-    <h2 class='bet-user text-center'><%= admission.user.first_name %> <%= admission.user.last_name %></h2>
-    <h3><strong><%= admission.user.display_score_total %></strong></h3>
-    <div class="user-bets">
+    </div>
+    <!-- Bets -->
+    <div class="not-showed user-bets" data-show-bets-target="link">
       <% Boat::BOATCLASSES.each do |boat_class| %>
         <div class="user-bet">
           <div>
-            <h2><strong><%= boat_class %></strong></h2>
-            <h3><strong><%= admission.user.display_score_by_category(boat_class) %></strong></h3>
-            <% unless @bets.includes(:boat).where(user: admission.user, boat: { category: boat_class }).empty? %>
-              <% @bets.includes(:boat).where(user: admission.user, boat: { category: boat_class }).sort_by(&:position).each do |bet| %>
+            <h2><strong><%= boat_class %> (<%= user.display_score_by_category(boat_class) %>)</strong></h2>
+            <% unless user.bets_by_category(boat_class).empty? %>
+              <% user.bets_by_category(boat_class).each do |bet| %>
                 <p><%= bet.position%>. <em><%= bet.boat.name %></em></p>
               <% end %>
               <% else %>
