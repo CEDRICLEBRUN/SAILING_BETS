@@ -10,8 +10,8 @@ class LeaguesController < ApplicationController
     if League.find(params[:id]).admissions.where(user: current_user, status: "accepted").present? || League.find(params[:id]).user == current_user
       @league = League.find(params[:id])
       @admissions = Admission.where(league: @league, status: "accepted")
-      @bets = Bet.all
       @users = User.accepted_in_league(@league)
+      @my_leagues = League.where_am_i(current_user)
       score_calculation
     else
       flash[:alert] = "Pas accès à cette ligue..."
