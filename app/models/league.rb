@@ -8,4 +8,9 @@ class League < ApplicationRecord
     leagues_requested = League.includes(:admissions).where(admissions: {user: user})
     leagues + leagues_requested
   end
+
+  def self.where_am_i_not(user)
+    leagues = League.where.not(user: user)
+    leagues - League.includes(:admissions).where(admissions: {user: user})
+  end
 end

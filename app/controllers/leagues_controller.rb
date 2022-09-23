@@ -1,16 +1,14 @@
 class LeaguesController < ApplicationController
   def index
-    @leagues = League.all
-    @my_leagues = League.where(user: current_user)
+    @leagues = League.where_am_i_not(current_user)
     @admission = Admission.new
-    @admissions = Admission.where(user: current_user)
   end
 
   def show
     if League.find(params[:id]).admissions.where(user: current_user, status: "accepted").present? || League.find(params[:id]).user == current_user
       @league = League.find(params[:id])
       @admissions = Admission.where(league: @league, status: "accepted")
-      @users = User.accepted_in_league(@league)
+      @users = User.accepted_in_league(@league, params[:category])
       @my_leagues = League.where_am_i(current_user)
       score_calculation
     else

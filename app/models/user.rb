@@ -44,22 +44,21 @@ class User < ApplicationRecord
     all_scores
   end
 
-  def self.accepted_in_league(league)
+  def self.accepted_in_league(league, category)
     owner = User.includes(:leagues).where(leagues: { id: league.id })
     accepted_users = User.includes(:admissions).where(admissions: { league: league, status: "accepted" })
     owner + accepted_users
-    # players = []
-    # all_users.each do |user|
-    #   case type
-    #   when "yellow_jersey"
-    #     players << [user, user.total_scores.first.yellow_jersey]
-    #   when "green_jersey"
-    #     players << [user, user.total_scores.first.green_jersey]
-    #   when "polka_dot_jersey"
-    #     players << [user, user.total_scores.first.polka_dot_jersey]
-    #   end
-    # end
-    # players
+    all_users = owner + accepted_users
+    all_players = []
+    all_users.each do |user|
+      case category
+      when nil
+        all_players << [user, user.display_score_total]
+      else
+        all_players << [user, user.display_score_by_category(category)]
+      end
+    end
+    players = all_players.sort_by { |el| el[1] }
   end
 
   def bets_by_category(category)

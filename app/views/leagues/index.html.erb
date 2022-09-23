@@ -1,16 +1,20 @@
 <div class="container">
   <% if @leagues %>
     <% @leagues.each do |league| %>
-      <div class="league d-flex align-items-center">
-        <%= cl_image_tag league.logo.key, class: "border-solid border-2 rounded-full w-16 h-16 object-cover m-auto" %>
-        <h2><%= league.title %></h2>
-        <% if league.admissions.where(user: current_user).present? %>
-          <%= link_to "Quitter", league_admission(league, league.admissions.where(user: current_user).first), class: "btn-quit", method: :delete %>
-        <% elsif league.user != current_user %>
-          <%= simple_form_for [league, @admission] do |f| %>
-            <%= f.submit "Rejoindre", class: "btn-join" %>
+      <div class="flex items-center justify-around">
+        <div class="flex items-center w-64">
+          <%= cl_image_tag league.logo.key, class: "border-solid border-2 rounded-full w-16 h-16 object-cover m-auto" %>
+          <h2><%= league.title %></h2>
+        </div>
+        <div>
+          <% if league.admissions.where(user: current_user).present? %>
+            <%= link_to "Quitter", league_admission_path(league, league.admissions.where(user: current_user).first), class: "btn-quit", method: :delete %>
+          <% elsif league.user != current_user %>
+            <%= simple_form_for [league, @admission] do |f| %>
+              <%= f.submit "Rejoindre", class: "btn-join" %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     <% end %>
   <% end %>

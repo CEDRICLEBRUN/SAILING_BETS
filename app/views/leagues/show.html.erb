@@ -1,7 +1,7 @@
 <div data-controller="show-league-button"class="relative">
   <!-- En-tête avec la Ligue -->
   <div class="title flex flex-col items-center relative">
-    <h1>Classement Général</h1>
+    <h1>Classement</h1>
     <div class="flex justify-around items-center mb-3">
       <!-- Bouton Sélection du Peloton -->
       <% if @my_leagues.count > 1 %>
@@ -11,41 +11,76 @@
         </div>
       <% end %>
       <%= cl_image_tag @league.logo.key, class: "logo-league" %>
-      <h1 class="ml-3"><%= @league.title %></h1>
+      <h2 class="ml-3"><%= @league.title %></h2>
+    </div>
+  </div>
+
+  <!-- Link to different rankings -->
+  <div class="menu">
+    <%= link_to league_path(@league, category: nil), class: (params[:category] == nil ? "menu-active" : "menu-disactive") do %>
+      <p class="text-center">GENERAL</p>
+    <% end %>
+    <div class="flex justify-around mt-9 mb-6">
+      <% Boat::BOATCLASSES.each do |boat_class| %>
+        <%= link_to league_path(@league, category: boat_class), class: (params[:category] == boat_class ? "menu-active" : "menu-disactive") do %>
+          <p><%= boat_class %></p>
+        <% end %>
+      <% end %>
     </div>
   </div>
 
   <!-- Ranking -->
   <% @users.each_with_index do |user, index| %>
     <div data-controller="show-bets">
-      <div class="flex items-center justify-around">
-        <% if user == current_user %>
-          <div class="ranking-card ranking-card-user flex justify-between items-center">
-        <% else %>
-          <div class="ranking-card flex justify-between items-center">
-        <% end %>
-            <p><strong><%= index + 1 %></strong></p>
-            <div>
-              <p><%= user.first_name %> <%= user.last_name %></p>
-            </div>
-            <div class="ranking-card-points flex items-center">
-              <p class="score"><%= user.display_score_total %></p>
-              <p>pts</p>
-              <p class="ml-4" data-action="click->show-bets#show"><i class="fas fa-chevron-down"></i></p>
-            </div>
-          </div>
-      </div>
-      <!-- Bets -->
-      <div class="not-showed user-bets" data-show-bets-target="link">
-        <% Boat::BOATCLASSES.each do |boat_class| %>
-          <div class="user-bet">
-            <div>
-              <h2><strong><%= boat_class %> (<%= user.display_score_by_category(boat_class) %>)</strong></h2>
-              <% unless user.bets_by_category(boat_class).empty? %>
-                <% user.bets_by_category(boat_class).each do |bet| %>
-                  <p><%= bet.position%>. <em><%= bet.boat.name %></em></p>
-                <% end %>
+      <% unless params[:category].nil? %>
+        <div class="flex items-center justify-center">
+      <% end %>
+          <div class="flex items-center justify-around">
+          <% if user.first == current_user %>
+            <div class="ranking-card ranking-card-user flex justify-between items-center">
+          <% else %>
+            <div class="ranking-card flex justify-between items-center">
+          <% end %>
+              <p><strong><%= index + 1 %></strong></p>
+              <div>
+                <p><%= user.first.first_name %> <%= user.first.last_name %></p>
+              </div>
+              <div class="ranking-card-points flex items-center">
+                <p class="score"><%= user.last %></p>
+                <p>pts</p>
+                <% if params[:category].nil? %>
+                  <p class="ml-4" data-action="click->show-bets#show"><i class="fas fa-chevron-down"></i></p>
                 <% else %>
+                  <p class="ml-4" data-action="click->show-bets#show"><i class="fas fa-chevron-right"></i></p>
+                <% end %>
+              </div>
+            </div>
+        </div>
+        <!-- Bets -->
+        <% if params[:category].nil? %>
+          <div class="not-showed user-bets" data-show-bets-target="link">
+            <% Boat::BOATCLASSES.each do |boat_class| %>
+              <div class="user-bet">
+                <div>
+                  <h3><strong><%= boat_class %> (<%= user.first.display_score_by_category(boat_class) %>)</strong></h3>
+                  <% unless user.first.bets_by_category(boat_class).empty? %>
+                    <% user.first.bets_by_category(boat_class).each do |bet| %>
+                      <p><%= bet.position%>. <em><%= bet.boat.name %></em></p>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="flex justify-around">
+            <div class="not-showed flex" data-show-bets-target="link">
+              <% unless user.first.bets_by_category(params[:category]).empty? %>
+                <% user.first.bets_by_category(params[:category]).each do |bet| %>
+                  <div class="user-bet-solo">
+                    <p><%= bet.position%>. <em><%= bet.boat.name %></em></p>
+                  </div>
+                <% end %>
               <% end %>
             </div>
           </div>
