@@ -10,7 +10,6 @@ class LeaguesController < ApplicationController
       @admissions = Admission.where(league: @league, status: "accepted")
       @users = User.accepted_in_league(@league, params[:category])
       @my_leagues = League.where_am_i(current_user)
-      score_calculation
     else
       flash[:alert] = "Pas accès à cette ligue..."
       redirect_to leagues_path
@@ -45,19 +44,5 @@ class LeaguesController < ApplicationController
 
   def league_params
     params.require(:league).permit(:title, :logo)
-  end
-
-  def score_calculation
-    players = User.includes(:bets).all
-
-    players.each do |player|
-      player.bets.each do |bet|
-        bet.score_compute!
-      end
-    end
-
-    players.each do |player|
-      player.total_scores.first.calcul_score
-    end
   end
 end
