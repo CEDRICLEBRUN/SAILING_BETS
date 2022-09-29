@@ -51,5 +51,11 @@
 </div>
 
 <div class="flex justify-around my-5">
+  <% if current_user.admin? %>
+    <%= link_to "Résultat de l'étape", results_path(category: "Ultim"), class: "btn-league" %>
+  <% end %>
+</div>
+
+<div class="flex justify-around my-5">
   <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "btn-league" %>
 </div>
