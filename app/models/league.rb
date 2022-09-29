@@ -1,6 +1,6 @@
 class League < ApplicationRecord
   belongs_to :user
-  has_many :admissions
+  has_many :admissions, dependent: :destroy
   has_one_attached :logo
 
   def self.where_am_i(user)
