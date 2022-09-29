@@ -41,49 +41,55 @@
           <% else %>
             <div class="ranking-card flex justify-between items-center">
           <% end %>
-              <p><strong><%= index + 1 %></strong></p>
+              <% if Time.now > Time.new(2022, 9, 29, 17, 50) %>
+                <p><strong><%= index + 1 %></strong></p>
+              <% end %>
               <div>
                 <p><%= user.first.first_name %> <%= user.first.last_name %></p>
               </div>
-              <div class="ranking-card-points flex items-center">
-                <p class="score"><%= user.last %></p>
-                <p>pts</p>
-                <% if params[:category].nil? %>
-                  <p class="ml-4" data-action="click->show-bets#show"><i class="fas fa-chevron-down"></i></p>
-                <% else %>
-                  <p class="ml-4" data-action="click->show-bets#show"><i class="fas fa-chevron-right"></i></p>
-                <% end %>
-              </div>
+              <% if Time.now > Time.new(2022, 9, 29, 17, 50) %>
+                <div class="ranking-card-points flex items-center">
+                  <p class="score"><%= user.last %></p>
+                  <p>pts</p>
+                  <% if params[:category].nil? %>
+                    <p class="ml-4" data-action="click->show-bets#show"><i class="fas fa-chevron-down"></i></p>
+                  <% else %>
+                    <p class="ml-4" data-action="click->show-bets#show"><i class="fas fa-chevron-right"></i></p>
+                  <% end %>
+                </div>
+              <% end %>
             </div>
         </div>
         <!-- Bets -->
-        <% if params[:category].nil? %>
-          <div class="not-showed user-bets" data-show-bets-target="link">
-            <% Boat::BOATCLASSES.each do |boat_class| %>
-              <div class="user-bet">
-                <div>
-                  <h3><strong><%= boat_class %> (<%= user.first.display_score_by_category(boat_class) %>)</strong></h3>
-                  <% unless user.first.bets_by_category(boat_class).empty? %>
-                    <% user.first.bets_by_category(boat_class).each do |bet| %>
-                      <p><%= bet.position%>. <em><%= bet.boat.name %></em></p>
+        <% if Time.now > Time.new(2022, 9, 29, 17, 50) %>
+          <% if params[:category].nil? %>
+            <div class="not-showed user-bets" data-show-bets-target="link">
+              <% Boat::BOATCLASSES.each do |boat_class| %>
+                <div class="user-bet">
+                  <div>
+                    <h3><strong><%= boat_class %> (<%= user.first.display_score_by_category(boat_class) %>)</strong></h3>
+                    <% unless user.first.bets_by_category(boat_class).empty? %>
+                      <% user.first.bets_by_category(boat_class).each do |bet| %>
+                        <p><%= bet.position%>. <em><%= bet.boat.name %></em></p>
+                      <% end %>
                     <% end %>
-                  <% end %>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% else %>
-          <div class="flex justify-around">
-            <div class="not-showed flex" data-show-bets-target="link">
-              <% unless user.first.bets_by_category(params[:category]).empty? %>
-                <% user.first.bets_by_category(params[:category]).each do |bet| %>
-                  <div class="user-bet-solo">
-                    <p><%= bet.position%>. <em><%= bet.boat.name %></em></p>
                   </div>
-                <% end %>
+                </div>
               <% end %>
             </div>
-          </div>
+          <% else %>
+            <div class="flex justify-around">
+              <div class="not-showed flex" data-show-bets-target="link">
+                <% unless user.first.bets_by_category(params[:category]).empty? %>
+                  <% user.first.bets_by_category(params[:category]).each do |bet| %>
+                    <div class="user-bet-solo">
+                      <p><%= bet.position%>. <em><%= bet.boat.name %></em></p>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
