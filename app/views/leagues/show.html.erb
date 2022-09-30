@@ -70,7 +70,7 @@
                     <h3><strong><%= boat_class %> (<%= user.first.display_score_by_category(boat_class) %>)</strong></h3>
                     <% unless user.first.bets_by_category(boat_class).empty? %>
                       <% user.first.bets_by_category(boat_class).each do |bet| %>
-                        <p><%= bet.position%>. <em><%= bet.boat.name %></em></p>
+                        <p><%= bet.position%>. <em><%= bet.boat.name %></em> (<%= bet.boat.result.result_position %>)</p>
                       <% end %>
                     <% end %>
                   </div>
@@ -83,7 +83,7 @@
                 <% unless user.first.bets_by_category(params[:category]).empty? %>
                   <% user.first.bets_by_category(params[:category]).each do |bet| %>
                     <div class="user-bet-solo">
-                      <p><%= bet.position%>. <em><%= bet.boat.name %></em></p>
+                      <p><%= bet.position%>. <em><%= bet.boat.name %></em> (<%= bet.boat.result.result_position %>)</p>
                     </div>
                   <% end %>
                 <% end %>

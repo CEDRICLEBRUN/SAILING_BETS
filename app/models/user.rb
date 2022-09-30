@@ -63,7 +63,7 @@ class User < ApplicationRecord
 
   def bets_by_category(category)
     bets = []
-    self.bets.each do |bet|
+    self.bets.order(:position).each do |bet|
       bets << bet if bet.boat.category == category
     end
     bets
