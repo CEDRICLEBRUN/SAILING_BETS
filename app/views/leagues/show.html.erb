@@ -1,4 +1,26 @@
-<div data-controller="show-league-button"class="relative">
+<div data-controller="show-league-button" class="relative">
+
+  <div data-show-league-button-target="button">
+    <!-- Choix du Peloton -->
+    <div class="hidden choice-leagues w-full" style="background-color: white" data-show-league-button-target="link">
+      <div class="pr-3" data-action="click->show-league-button#show">
+        <p class="text-end"><i class="fas fa-times"></i></p>
+      </div>
+      <div>
+        <% @my_leagues.each do |league| %>
+          <%= link_to league_path(league) do %>
+            <div class="flex place-content-center">
+              <div class="flex items-center justify-around my-2">
+                <%= cl_image_tag league.logo.key, class: "logo-league-bis" %>
+                <p class="pl-3"><%= league.title %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
   <!-- En-tête avec la Ligue -->
   <div class="title flex flex-col items-center relative">
     <h1>Classement</h1>
@@ -35,7 +57,7 @@
       <% unless params[:category].nil? %>
         <div class="flex items-center justify-center">
       <% end %>
-          <div class="flex items-center justify-around">
+        <div class="flex items-center justify-around">
           <% if user.first == current_user %>
             <div class="ranking-card ranking-card-user flex justify-between items-center">
           <% else %>
@@ -67,7 +89,7 @@
               <% Boat::BOATCLASSES.each do |boat_class| %>
                 <div class="user-bet">
                   <div>
-                    <h3><strong><%= boat_class %> (<%= user.first.display_score_by_category(boat_class) %>)</strong></h3>
+                    <h3><strong><%= boat_class %> - <%= user.first.display_score_by_category(boat_class) %> pts</strong></h3>
                     <% unless user.first.bets_by_category(boat_class).empty? %>
                       <% user.first.bets_by_category(boat_class).each do |bet| %>
                         <p><%= bet.position%>. <em><%= bet.boat.name %></em> (<%= bet.boat.result.result_position %>)</p>
@@ -95,25 +117,5 @@
     </div>
   <% end %>
 
-  <div data-show-league-button-target="button">
-    <!-- Choix du Peloton -->
-    <div class="hidden choice-leagues w-full" style="background-color: white" data-show-league-button-target="link">
-      <div class="pr-3" data-action="click->show-league-button#show">
-        <p class="text-end"><i class="fas fa-times"></i></p>
-      </div>
-      <div>
-        <% @my_leagues.each do |league| %>
-          <%= link_to league_path(league) do %>
-            <div class="flex place-content-center">
-              <div class="flex items-center justify-around my-2">
-                <%= cl_image_tag league.logo.key, class: "logo-league-bis" %>
-                <p class="pl-3"><%= league.title %></p>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
 
 </div>
