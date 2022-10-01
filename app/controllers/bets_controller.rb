@@ -13,8 +13,8 @@ class BetsController < ApplicationController
 
   def create
     if bet_params['skipper_1'] == '' || bet_params['skipper_2'] == '' || bet_params['skipper_3'] == ''
-      flash[:alert] = 'Les 3 bateaux doivent être sélectionnés'
-      render 'bets/new'
+      flash.now.alert = 'Les 3 bateaux doivent être sélectionnés'
+      render 'bets/new', status: :unprocessable_entity
     else
       # first bet
       boat_name = bet_params['skipper_1'].reverse.split(' - ', 2).last.reverse
@@ -31,8 +31,9 @@ class BetsController < ApplicationController
       if first_bet && second_bet && third_bet
         redirect_to bets_path, notice: 'Pari pris en compte !'
       else
-        flash[:alert] = "Vous ne pouvez choisir un bateau qu'une seule fois"
-        render :new
+        delete_incomplete_bets
+        flash.now.alert = "Vous ne pouvez choisir un bateau qu'une seule fois"
+        render :new, status: :unprocessable_entity
       end
     end
   end
@@ -42,13 +43,11 @@ class BetsController < ApplicationController
 
   def modify
     if bet_params['skipper_1'] == '' || bet_params['skipper_2'] == '' || bet_params['skipper_3'] == ''
+      delete_incomplete_bets
       flash[:alert] = 'Les 3 bateaux doivent être sélectionnés'
-      render 'bets/change'
+      render 'bets/change', status: :unprocessable_entity
     else
-      bets = Bet.includes(:boat).where(user: current_user, boat: { category: bet_params['category'] })
-      bets.each do |bet|
-        bet.delete
-      end
+      Bet.includes(:boat).where(user: current_user, boat: { category: bet_params['category'] }).destroy_all
 
       # first bet
       boat_name = bet_params['skipper_1'].reverse.split(' - ', 2).last.reverse
@@ -65,8 +64,9 @@ class BetsController < ApplicationController
       if first_bet && second_bet && third_bet
         redirect_to bets_path, notice: 'Pari modifié et pris en compte !'
       else
-        flash[:alert] = "Vous ne pouvez choisir un bateau qu'une seule fois"
-        render :change
+        delete_incomplete_bets
+        flash.now.alert = "Vous ne pouvez choisir un bateau qu'une seule fois"
+        render :change, status: :unprocessable_entity
       end
     end
   end
@@ -87,5 +87,9 @@ class BetsController < ApplicationController
 
   def index_boat(category)
     Bet.includes(:boat).where(user: current_user, boat: { category: category }).sort_by(&:position)
+  end
+
+  def delete_incomplete_bets
+    Bet.includes(:boat).where(user: current_user, boat: { category: bet_params['category'] }).destroy_all
   end
 end
