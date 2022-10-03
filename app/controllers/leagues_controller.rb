@@ -24,10 +24,9 @@ class LeaguesController < ApplicationController
     @league = League.new(league_params)
     @league.user = current_user
     if @league.save
-
       redirect_to users_dashboard_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

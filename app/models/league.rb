@@ -5,6 +5,10 @@ class League < ApplicationRecord
   has_many :admissions, dependent: :destroy
   has_one_attached :logo
   before_save :assign_logo
+  validates :title, presence: true
+  validates :title, length: { minimum: 3, maximum: 30 }
+  validates :title, uniqueness: true
+
 
   def self.where_am_i(user)
     leagues = League.where(user: user)
