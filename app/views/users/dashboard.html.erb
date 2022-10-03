@@ -8,12 +8,12 @@
             <%= cl_image_tag league.logo.key, class: "logo-league" %>
             <h2><%= league.title %></h2>
           <% end %>
-        <% elsif league.admissions.where(user: current_user).first.status == "pending" %>
-          <%= cl_image_tag league.logo.key, class: "logo-league opacity-50" %>
-          <h2><%= league.title %></h2>
-        <% else %>
-          <%= cl_image_tag league.logo.key, class: "logo-league bg-sky-500/50" %>
-          <h2><%= league.title %></h2>
+        <% elsif league.admissions.where(user: current_user).first.status == "Pending" %>
+          <div class="opacity-50 text-center">
+            <%= cl_image_tag league.logo.key, class: "logo-league" %>
+            <h2><%= league.title %></h2>
+            <p>(En attente)</p>
+          </div>
         <% end %>
       <% end %>
     <% end %>
@@ -37,7 +37,7 @@
             <p><%= request.user.first_name %> <%= request.user.last_name %></p>
           </div>
           <div class="admission-validation">
-            <%= link_to admission_accept_path(request), method: :patch, class: "btn-join" do %>
+            <%= link_to admission_accept_path(request), method: :patch, class: "btn-accept" do %>
               <i class="fas fa-check-circle"></i>
             <% end %>
             <%= link_to admission_reject_path(request), method: :patch, class: "btn-quit" do %>
@@ -52,7 +52,7 @@
 
 <div class="flex justify-around my-5">
   <% if current_user.admin? %>
-    <%= link_to "Résultat de l'étape", results_path(category: "Ultim"), class: "btn-league" %>
+    <%= link_to "Résultats", results_path(category: "Ultim"), class: "btn-league" %>
   <% end %>
 </div>
 

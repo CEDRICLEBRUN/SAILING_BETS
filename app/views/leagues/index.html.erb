@@ -1,12 +1,14 @@
-<div class="container">
+<div class="grid grid-cols-3 gap-5">
   <% if @leagues %>
     <% @leagues.each do |league| %>
-      <div class="flex items-center justify-around">
-        <div class="flex items-center w-64">
-          <%= cl_image_tag league.logo.key, class: "border-solid border-2 rounded-full w-16 h-16 object-cover m-auto" %>
-          <h2><%= league.title %></h2>
+      <div class="card-league">
+        <div class="flex items-center justify-center">
+          <div>
+            <%= cl_image_tag league.logo.key, class: "logo-league" %>
+            <h2><%= league.title %></h2>
+          </div>
         </div>
-        <div>
+        <div class="text-center">
           <% if league.admissions.where(user: current_user).present? %>
             <%= link_to "Quitter", league_admission_path(league, league.admissions.where(user: current_user).first), class: "btn-quit", method: :delete %>
           <% elsif league.user != current_user %>
@@ -18,8 +20,8 @@
       </div>
     <% end %>
   <% end %>
+</div>
 
-  <div class="flex justify-around my-5">
-    <%= link_to "Créer ma ligue", new_league_path, class: "btn-league" %>
-  </div>
+<div class="flex justify-around my-5">
+  <%= link_to "Créer ma ligue", new_league_path, class: "btn-league" %>
 </div>

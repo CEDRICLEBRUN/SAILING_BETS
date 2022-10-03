@@ -144,7 +144,7 @@
   }
 }
 
-.btn-join {
+.btn-accept {
   background-color: white;
   color: $blue;
   border: 1px solid white;
@@ -178,4 +178,15 @@
   transition: opacity 0.3s ease;
   text-decoration: none;
   font-size: 10px;
+}
+
+.btn-join {
+  color: $blue;
+  border: 1px solid $blue;
+  padding: 5px;
+  border-radius: 5px;
+  &:hover {
+    color: white;
+    background-color: $blue;
+  }
 }

@@ -6,7 +6,7 @@
   <div class="navbar-top-right flex justify-between">
     <% if user_signed_in? %>
       <h3><%= link_to "Paris", bets_path %></h3>
-      <h3><%= link_to "Classement", (League.where_am_i(current_user).empty? ? users_dashboard_path : league_path(League.where_am_i(current_user).first)) %></h3>
+      <h3><%= link_to "Classement", (League.where_am_i_accepted(current_user).empty? ? users_dashboard_path(notice: true) : league_path(League.where_am_i(current_user).first)) %></h3>
       <h3><%= link_to "Bateaux", boats_path %></h3>
       <h3><%= link_to "Mon compte", users_dashboard_path %></h3>
     <% else %>
