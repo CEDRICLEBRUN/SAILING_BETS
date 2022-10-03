@@ -12,7 +12,7 @@ class LeaguesController < ApplicationController
       @my_leagues = League.where_am_i(current_user)
     else
       flash[:alert] = "Pas accès à cette ligue..."
-      redirect_to leagues_path
+      redirect_to users_dashboard_path
     end
   end
 
@@ -25,7 +25,7 @@ class LeaguesController < ApplicationController
     @league.user = current_user
     if @league.save
 
-      redirect_to leagues_path
+      redirect_to users_dashboard_path
     else
       render :new
     end
