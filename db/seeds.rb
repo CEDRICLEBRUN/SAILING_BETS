@@ -67,11 +67,11 @@ puts 'Creating boats'
 
 CSV.foreach(filepath, headers: :first_row) do |row|
   boat = Boat.new(
-    category: row['category'],
+    category: row.first.last,
     name: row['name'],
-    skipper_first_name: row['skipper_first_name'],
     skipper_last_name: row['skipper_last_name'],
-    skipper_nationality: row['skipper_nationality'],
+    skipper_first_name: row['skipper_first_name'],
+    skipper_nationality: row['nationality'],
     url_link: row['url_link']
   )
   boat.save!
@@ -79,15 +79,8 @@ end
 
 puts 'Creating boats done'
 
-puts 'Creating total_scores'
-
-User.all.each do |user|
-  TotalScore.create(user: user)
-end
-
-puts 'Creating total_scores done'
-
 puts 'Creating bets'
+
 ["ULTIM", "IMOCA", "OCEANFIFTY", "CLASS40", "RHUMMONO", "RHUMMULTI"].each do |category|
   x = 7
   i = 0

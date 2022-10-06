@@ -1,6 +1,6 @@
 class Boat < ApplicationRecord
   has_many :bets, dependent: :destroy
-  has_one :result
+  has_one :result, dependent: :destroy
 
   ultims = []
   imocas = []

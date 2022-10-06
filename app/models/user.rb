@@ -12,6 +12,8 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
   validates :bets, length: { maximum: 18 }
 
+  after_create :set_total_score
+
   def display_score_total
     scores = self.total_scores.first
     score_total = scores.ultim + scores.imoca + scores.ocean_fifty + scores.class_fourty + scores.rhum_mono + scores.rhum_multi
@@ -67,5 +69,11 @@ class User < ApplicationRecord
       bets << bet if bet.boat.category == category
     end
     bets
+  end
+
+  private
+
+  def set_total_score
+    TotalScore.create(user: self)
   end
 end

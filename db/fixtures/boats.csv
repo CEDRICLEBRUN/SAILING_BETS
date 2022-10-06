@@ -1,138 +1,139 @@
-category,name,skipper_first_name,skipper_last_name,skipper_nationality,url_link
-IMOCA,Hublot,Roura,Alan,Suisse,https://www.routedurhum.com/fr/skipper/14
-Class 40,Ibsa Group,Bona,Alberto,Italie,https://www.routedurhum.com/fr/skipper/80
-Class 40,Polka Dot,Mehran,Alex,France,https://www.routedurhum.com/fr/skipper/41
+﻿category,name,skipper_last_name,skipper_first_name,nationality,url_link
+IMOCA,APIVIA,Dalin,Charlie,France,https://www.routedurhum.com/fr/skipper/39
+Class 40,Wisper,Cauwe,Maxime,France,https://www.routedurhum.com/fr/skipper/127
+Class 40,A l'aveugle - Trim Control,Jambou,François,France,https://www.routedurhum.com/fr/skipper/132
 Class 40,ALLAGRANDE PIRELLI,Beccaria,Ambrogio,Italie,https://www.routedurhum.com/fr/skipper/287
-Class 40,La Boulangère Bio,Grassi,Amélie,France,https://www.routedurhum.com/fr/skipper/126
-Class 40,In Fluence,Fornaro,Andrea,Italie,https://www.routedurhum.com/fr/skipper/119
-Class 40,Redman,Carpentier,Antoine,France,https://www.routedurhum.com/fr/skipper/12
-IMOCA,Ebac Literie,Cornic,Antoine,France,https://www.routedurhum.com/fr/skipper/121
-Class 40,E.Leclerc Ville-La-Grand,Magre,Antoine,France,https://www.routedurhum.com/fr/skipper/43
-Ultim,Banque Populaire,Le Cléac'h,Armel,France,https://www.routedurhum.com/fr/skipper/3
-Ocean Fifty,Les P'tits Doudous,Tripont,Armel,France,https://www.routedurhum.com/fr/skipper/137
-IMOCA,La Mie Câline,Boissières,Arnaud,France,https://www.routedurhum.com/fr/skipper/4
+Class 40,Banque du Leman,Koster,Simon,France,https://www.routedurhum.com/fr/skipper/117
+Class 40,BLEU BLANC,Thomas,Hervé,France,https://www.routedurhum.com/fr/skipper/79
+Class 40,CAPTAIN ALTERNANCE,Piperol,Keni,France,https://www.routedurhum.com/fr/skipper/13
+IMOCA,BIOTHERM,Meilhat,Paul,France,https://www.routedurhum.com/fr/skipper/293
+Class 40,CENTRAKOR,Mergui,Mikael,France,https://www.routedurhum.com/fr/skipper/115
+Ultim,MAXI BANQUE POPULAIRE XI,Le Cléac'h,Armel,France,https://www.routedurhum.com/fr/skipper/3
+Ocean Fifty,Les P'tits Doudous,Tripon,Armel,France,https://www.routedurhum.com/fr/skipper/137
+IMOCA,BUREAU VALLEE,Burton,Louis,France,https://www.routedurhum.com/fr/skipper/103
 Rhum Mono,PEN DUICK III POUR LES ENFANTS DE ROBERT DEBRÉ,Pennarun,Arnaud,France,https://www.routedurhum.com/fr/skipper/91
-Ultim,ULTIM SAILING - TBC,Le Vaillant,Arthur,France,https://www.routedurhum.com/fr/skipper/283
-Class 40,Crosscall,Durcroz,Aurélien,France,https://www.routedurhum.com/fr/skipper/24
-Class 40,Projet Rescue Ocean,Trehin,Axel,France,https://www.routedurhum.com/fr/skipper/6
-Class 40,Rennes / Saint-Malo / Mer Entreprendre,Hulin,Baptiste,France,https://www.routedurhum.com/fr/skipper/136
-IMOCA,Guyot Environnement,Dutreux,Benjamin,France,https://www.routedurhum.com/fr/skipper/101
-IMOCA,So Good,Ferre,Benjamin,France,https://www.routedurhum.com/fr/skipper/72
-IMOCA,Malizia Sea Explorer,Herrmann,Boris,Allemagne,https://www.routedurhum.com/fr/skipper/28
-Rhum Multi,60 000 Rebonds,Maisonneuve,Brieuc,France,https://www.routedurhum.com/fr/skipper/122
-Rhum Mono,Formatives Network,Chabaud,Catherine,France,https://www.routedurhum.com/fr/skipper/30
-Class 40,Sogestran - Seafrigo,Château,Cédric,France,https://www.routedurhum.com/fr/skipper/60
-Ultim,Maxi Edmond de Rotschild,Caudrelier,Charles,France,https://www.routedurhum.com/fr/skipper/291
-Rhum Multi,Acapella - La Chaine de l'Espoir,Capelle,Charlie,France,https://www.routedurhum.com/fr/skipper/289
-IMOCA,Apivia,Dalin,Charlie,France,https://www.routedurhum.com/fr/skipper/39
-Rhum Multi,Château du Launay,Bogrand,Christophe,France,https://www.routedurhum.com/fr/skipper/123
-IMOCA,Imagine,Colman,Conrad,Nouvelle-Zélande,https://www.routedurhum.com/fr/skipper/108
-Class 40,Queginer - Innoveo,Douguet,Corentin,France,https://www.routedurhum.com/fr/skipper/18
-IMOCA,GROUPE APICIL,Seguin,Damien,France,https://www.routedurhum.com/fr/skipper/52
-Rhum Mono,Sos parebrise plus,Ecalard,Daniel,France,https://www.routedurhum.com/fr/skipper/95
-Rhum Multi,Trilogic,Ducosson,David,France,https://www.routedurhum.com/fr/skipper/81
-Class 40,Vicitan,Le Vourch,Didier,France,https://www.routedurhum.com/fr/skipper/76
-Class 40,Conscious Planet,Alexander,Donald,Afrique du sud,https://www.routedurhum.com/fr/skipper/130
-Class 40,Viranga,Hamez,Emmanuel,France,https://www.routedurhum.com/fr/skipper/130
-Class 40,Edenred,Le Roch,Emmanuel,France,https://www.routedurhum.com/fr/skipper/50
+Ultim,MIEUX,Le Vaillant,Arthur,France,https://www.routedurhum.com/fr/skipper/283
+Class 40,Chocolats Paries - SCREB,Daramy,Jean-Baptiste,France,https://www.routedurhum.com/fr/skipper/55
+Class 40,CONSCIOUS PLANET,Alexander,Donald,Afrique du sud,https://www.routedurhum.com/fr/skipper/130
+Class 40,CREDIT MUTUEL,Lipinski,Ian,France,https://www.routedurhum.com/fr/skipper/8
+IMOCA,Cap Agir Ensemble,Marsset,Sébastien,France,https://www.routedurhum.com/fr/skipper/116
+IMOCA,CHARAL,Beyou,Jérémie,France,https://www.routedurhum.com/fr/skipper/109
+IMOCA,China Dream.Haikou,Xu,Jingkun,Chine,https://www.routedurhum.com/fr/skipper/135
+Rhum Multi,CMA Île-de-France - 60 000 Rebonds,Maisonneuve,Brieuc,France,https://www.routedurhum.com/fr/skipper/122
+Rhum Mono,Formatives ESI Business School pour Ocean As Common,Chabaud,Catherine,France,https://www.routedurhum.com/fr/skipper/30
+Class 40,ACI,Kostelic,Ivica,Croatie,https://www.routedurhum.com/fr/skipper/94
+Ultim,Maxi Edmond de Rothschild,Caudrelier,Charles,France,https://www.routedurhum.com/fr/skipper/291
+Rhum Multi,ACAPELLA - La chaîne de l'espoir,Capelle,Charlie,France,https://www.routedurhum.com/fr/skipper/289
 IMOCA,COMMEUNSEULHOMME Powered by Altavia,Bellion,Eric,France,https://www.routedurhum.com/fr/skipper/107
-Ocean Fifty,Komilfo,Péron,Eric,France,https://www.routedurhum.com/fr/skipper/203
-Ocean Fifty,Koesio,Le Roux,Erwan,France,https://www.routedurhum.com/fr/skipper/129
-Rhum Multi,Interaction,Thiboumery,Erwan,France,https://www.routedurhum.com/fr/skipper/48
+Rhum Multi,Château du Launay,Bogrand,Christophe,France,https://www.routedurhum.com/fr/skipper/123
+IMOCA,CORUM L'EPARGNE,Troussel,Nicolas,France,https://www.routedurhum.com/fr/skipper/112
+Class 40,CROSSCALL,Durcroz,Aurélien,France,https://www.routedurhum.com/fr/skipper/24
+IMOCA,Demain c'est loin,Rouger,Nicolas,France,https://www.routedurhum.com/fr/skipper/295
+Rhum Mono,SOS PARE-BRISE +,Ecalard,Daniel,France,https://www.routedurhum.com/fr/skipper/95
+Rhum Multi,Trilogik - Dys de Cœur,Ducosson,David,France,https://www.routedurhum.com/fr/skipper/81
+Class 40,E.Leclerc Ville-La-Grand,Magre,Antoine,France,https://www.routedurhum.com/fr/skipper/43
+Class 40,Edenred,Le Roch,Emmanuel,France,https://www.routedurhum.com/fr/skipper/50
+Class 40,EDIGO ~ UNIVERRE,Courbon,Yves,France,https://www.routedurhum.com/fr/skipper/63
+Class 40,EORA,Henry,Rupert,Autsralie,https://www.routedurhum.com/fr/skipper/134
+IMOCA,DMG MORI Global One,Shiraishi,Kojiro,France,https://www.routedurhum.com/fr/skipper/82
+Ocean Fifty,KOMILFO,Péron,Eric,France,https://www.routedurhum.com/fr/skipper/203
+Ocean Fifty,KOESIO,Le Roux,Erwan,France,https://www.routedurhum.com/fr/skipper/129
+Rhum Multi,Interaction,Thibouméry,Erwan,France,https://www.routedurhum.com/fr/skipper/48
 Rhum Multi,PiR2,Hochede,Etienne,France,https://www.routedurhum.com/fr/skipper/68
 Rhum Mono,Bella Donna - Race for Pure Ocean,Gennari,Fabio,France,https://www.routedurhum.com/fr/skipper/45
-IMOCA,Nexans Art et Fénêtres,Amédéo,Fabrice,France,https://www.routedurhum.com/fr/skipper/22
+IMOCA,EBAC LITERIE,Cornic,Antoine,France,https://www.routedurhum.com/fr/skipper/121
 Rhum Multi,Ille et Vilaine Cap vers l'inclusion,Payen,Fabrice,France,https://www.routedurhum.com/fr/skipper/31
-Class 40,Equipe Voile Parkinson,Gueguen,Florian,France,https://www.routedurhum.com/fr/skipper/87
-Ultim,Idec Sport,Joyon,Francis,France,https://www.routedurhum.com/fr/skipper/111
-Ultim,SVR Lazartigue,Gabart,François,France,https://www.routedurhum.com/fr/skipper/128
-Class 40,A l'aveugle,Jambou,François,France,https://www.routedurhum.com/fr/skipper/132
-Class 40,Yoda,Bouvet,Franz,France,https://www.routedurhum.com/fr/skipper/38
+Class 40,Dopamine Sailing Team,Gueguen,Florian,France,https://www.routedurhum.com/fr/skipper/87
+Ultim,IDEC Sport,Joyon,Francis,France,https://www.routedurhum.com/fr/skipper/111
+Ultim,SVR-LAZARTIGUE,Gabart,François,France,https://www.routedurhum.com/fr/skipper/128
+Class 40,EVERIAL,Thuret,Stan,France,https://www.routedurhum.com/fr/skipper/5
+Class 40,Fondation Stargardt,Le Pape,Martin,France,https://www.routedurhum.com/fr/skipper/104
 Class 40,Fortissimo,Mataczynski,Geoffrey,France,https://www.routedurhum.com/fr/skipper/49
-IMOCA,Prysmian Group,Pedote,Giancarlo,Italie,https://www.routedurhum.com/fr/skipper/23
-Rhum Multi,Jess,Buekenhout,Gilles,Belgique,https://www.routedurhum.com/fr/skipper/93
+IMOCA,Fives - Lantana Environnement,Duc,Louis,France,https://www.routedurhum.com/fr/skipper/73
+Rhum Multi,JESS,Buekenhout,Gilles,Belgique,https://www.routedurhum.com/fr/skipper/93
 Rhum Mono,Kornog 2,Colubi,Gilles,France,https://www.routedurhum.com/fr/skipper/118
 Ocean Fifty,GROUPE GCA-1001 SOURIRES,Lamiré,Gilles,France,https://www.routedurhum.com/fr/skipper/7
-Class 40,Kite,Leonard,Greg,Etats-Unis,https://www.routedurhum.com/fr/skipper/133
-IMOCA,Freelance.com,Soudée,Guirec,France,https://www.routedurhum.com/fr/skipper/10
-Rhum Mono,Terranimo,Pronier,Guy,France,https://www.routedurhum.com/fr/skipper/70
+Class 40,FullSave,Balmès,Jean-Pierre,France,https://www.routedurhum.com/fr/skipper/302
+IMOCA,Fortinet - Best Western,Attanasio,Romain,France,https://www.routedurhum.com/fr/skipper/136
+Rhum Mono,TERRANIMO,Pronier,Guy,France,https://www.routedurhum.com/fr/skipper/70
 Rhum Multi,Guyader - Savéol,Chapalain,Gwen,France,https://www.routedurhum.com/fr/skipper/77
 Rhum Multi,GDD,Mabire,Halvard,France,https://www.routedurhum.com/fr/skipper/106
-Class 40,Eora,Rupert,Henry,Autsralie,https://www.routedurhum.com/fr/skipper/134
-Class 40,BLEU BLANC,Thomas,Hervé,France,https://www.routedurhum.com/fr/skipper/79
-Class 40,Crédit Mutuel,Lipinski,Ian,France,https://www.routedurhum.com/fr/skipper/8
-IMOCA,MACSF,Joschke,Isabelle,France,https://www.routedurhum.com/fr/skipper/9
-Class 40,Croatia Full of Life,Kostelic,Ivica,Croatie,https://www.routedurhum.com/fr/skipper/94
-IMOCA,Gentoo,Harayda,James,Royaume-Uni,https://www.routedurhum.com/fr/skipper/205
-Class 40,Serenis Consulting,Galfione,Jean,France,https://www.routedurhum.com/fr/skipper/32
-Class 40,Chocolats Paries - SCREB,Daramy,Jean-Baptiste,France,https://www.routedurhum.com/fr/skipper/55
-Class 40,FullSave,Balmès,Jean-Pierre,France,https://www.routedurhum.com/fr/skipper/302
-Rhum Mono,Notre Méditerranée - Ville de Nice,Dick,Jean-Pierre,France,https://www.routedurhum.com/fr/skipper/114
-Rhum Mono,JSB DEMENAGEMENTS,Biard,Jean-Sébastien,France,https://www.routedurhum.com/fr/skipper/89
-IMOCA,Charal,Beyou,Jérémie,France,https://www.routedurhum.com/fr/skipper/109
-IMOCA,China Dream,Xu,Jingkun,Chine,https://www.routedurhum.com/fr/skipper/135
-Class 40,Volvo,Gerckens,Jonas,Belgique,https://www.routedurhum.com/fr/skipper/17
-Class 40,Nestenn - Entrepreneurs pour la Planète,Bonnier,Jules,France,https://www.routedurhum.com/fr/skipper/53
-Rhum Mono,Fédération du Commerce du Pays de Saint-Malo,Reemers,Julien,France,https://www.routedurhum.com/fr/skipper/59
-Class 40,Cap'tain Alternance,Piperol,Keni,France,https://www.routedurhum.com/fr/skipper/13
-IMOCA,PRB,Escoffier,Kevin,France,https://www.routedurhum.com/fr/skipper/19
-Class 40,Recycleurs Bretons,Le Borgne,Kieran,France,https://www.routedurhum.com/fr/skipper/69
-Class 40,HBF - Reforest'Action,De Pavant,Kito,France,https://www.routedurhum.com/fr/skipper/44
-IMOCA,DMG MORI Global One,Shiraishi,Kojiro,France,https://www.routedurhum.com/fr/skipper/82
-Rhum Mono,Lea,André,Laumet,France,https://www.routedurhum.com/fr/skipper/210
 Class 40,GLACES ROMANES,Camprubi,Laurent,France,https://www.routedurhum.com/fr/skipper/37
-Rhum Multi,Happy,Etheimer,Laurent,France,https://www.routedurhum.com/fr/skipper/299
-Rhum Multi,Lodigroup,Escoffier,Loïc,France,https://www.routedurhum.com/fr/skipper/83
-IMOCA,Bureau Valée,Burton,Louis,France,https://www.routedurhum.com/fr/skipper/103
-IMOCA,Fives - Lantana Environnement,Duc,Louis,France,https://www.routedurhum.com/fr/skipper/73
-Class 40,Lamotte Module Création,Berry,Luke,France,https://www.routedurhum.com/fr/skipper/36
-IMOCA,Groupe Setin,Cousin,Manuel,France,https://www.routedurhum.com/fr/skipper/100
-Rhum Multi,METAROM MG5,Guillemot,Marc,France,https://www.routedurhum.com/fr/skipper/64
-Class 40,Sensation Class40,Lepesqueux,Marc,France,https://www.routedurhum.com/fr/skipper/56
-Class 40,Fondation Stargardt,Le Pape,Martin,France,https://www.routedurhum.com/fr/skipper/104
-Class 40,Randstad Ausy,Louchart,Martin,France,https://www.routedurhum.com/fr/skipper/50
-Class 40,Prendre la mer, Agir pour la forêt,Claveau,Mathieu,France,https://www.routedurhum.com/fr/skipper/40
+Class 40,Groupe SNEF,Macaire,Xavier,France,https://www.routedurhum.com/fr/skipper/16
+Class 40,HappyVore - Café Joyeux,D'Estais,Nico,France,https://www.routedurhum.com/fr/skipper/138
+IMOCA,FREELANCE.COM,Soudée,Guirec,France,https://www.routedurhum.com/fr/skipper/10
+Class 40,HBF - Reforest'Action,De Pavant,Kito,France,https://www.routedurhum.com/fr/skipper/44
+IMOCA,Gentoo,Harayda,James,Royaume-Uni,https://www.routedurhum.com/fr/skipper/205
+Class 40,IBSA,Bona,Alberto,Italie,https://www.routedurhum.com/fr/skipper/80
+Class 40,IN FLUENCE,Fornaro,Andrea,Italie,https://www.routedurhum.com/fr/skipper/119
 Class 40,Inter Invest,Perraut,Matthieu,France,https://www.routedurhum.com/fr/skipper/62
-Class 40,#OnEstLarge,Cauwe,Maxime,France,https://www.routedurhum.com/fr/skipper/127
-IMOCA,V and B - Monbana - Mayenne,Sorel,Maxime,France,https://www.routedurhum.com/fr/skipper/15
-Class 40,Centrakor,Mergui,Mikael,France,https://www.routedurhum.com/fr/skipper/115
-Class 40,Up Sailing - Unis pour le Planète,Ursault Poupon,Morgane,France,https://www.routedurhum.com/fr/skipper/66
-Class 40,HappyVore,D'Estais,Nico,France,https://www.routedurhum.com/fr/skipper/138
-IMOCA,Demain c'est loin,Rouger,Nicolas,France,https://www.routedurhum.com/fr/skipper/295
-IMOCA,Corum L'Epargne,Troussel,Nicolas,France,https://www.routedurhum.com/fr/skipper/112
-IMOCA,Gitana 80,Heer,Oliver,Suisse,https://www.routedurhum.com/fr/skipper/90
-Rhum Mono,Elora,Nemsguern,Olivier,France,https://www.routedurhum.com/fr/skipper/120
-Rhum Multi,Rayon Vert,Nataf,Oren,Israël,https://www.routedurhum.com/fr/skipper/71
-IMOCA,Bitoherm,Meilhat,Paul,France,https://www.routedurhum.com/fr/skipper/293
-Rhum Multi,Flo,Poupon,Philippe,France,https://www.routedurhum.com/fr/skipper/285
+Rhum Mono,Notre Méditerranée - Ville de Nice,Dick,Jean-Pierre,France,https://www.routedurhum.com/fr/skipper/114
+Rhum Mono,JSB Déménagements,Biard,Jean-Sébastien,France,https://www.routedurhum.com/fr/skipper/89
+IMOCA,Oliver Heer Ocean Racing,Heer,Oliver,Suisse,https://www.routedurhum.com/fr/skipper/90
+IMOCA,GROUPE APICIL,Seguin,Damien,France,https://www.routedurhum.com/fr/skipper/52
+Class 40,Kite,Leonard,Greg,Etats-Unis,https://www.routedurhum.com/fr/skipper/133
+Class 40,La Boulangère Bio,Grassi,Amélie,France,https://www.routedurhum.com/fr/skipper/126
+Rhum Mono,Fédération du Commerce du Pays de Saint-Malo,Reemers,Julien,France,https://www.routedurhum.com/fr/skipper/59
+Class 40,Caisses Réunionnaises Complémentaires,Jost,Victor,France,https://www.routedurhum.com/fr/skipper/139
+IMOCA,Groupe SETIN,Cousin,Manuel,France,https://www.routedurhum.com/fr/skipper/100
+Class 40,Lamotte - Module Création,Berry,Luke,France,https://www.routedurhum.com/fr/skipper/36
 Class 40,Legallais,Casenave-Péré,Pierre,France,https://www.routedurhum.com/fr/skipper/247
-IMOCA,Kattan,Lacaze,Pierre,France,https://www.routedurhum.com/fr/skipper/124
-Class 40,Vogue avec un Crohn,Attwell,Pierre-Louis,France,https://www.routedurhum.com/fr/skipper/58
-IMOCA,Medallia,Hare,Pipe,Royaume-Uni,https://www.routedurhum.com/fr/skipper/42
-Ocean Fifty,Arkema,Vlamynck,Quentin,France,https://www.routedurhum.com/fr/skipper/75
-Rhum Mono,Faïaoahé,Gerin,Rémy,France,https://www.routedurhum.com/fr/skipper/85
-IMOCA,Rêve de Large - Region Guadeloupe,Sepho,Rodolphe,France,https://www.routedurhum.com/fr/skipper/297
-Rhum Multi,We Explore,Jourdain,Roland,France,https://www.routedurhum.com/fr/skipper/20
-IMOCA,Fortinet Best Western,Attanasio,Romain,France,https://www.routedurhum.com/fr/skipper/136
-Ultim,Use It Again! By Extia,Pilliard,Romain,France,https://www.routedurhum.com/fr/skipper/35
+IMOCA,Guyot environnement - Water Family,Dutreux,Benjamin,France,https://www.routedurhum.com/fr/skipper/101
+Rhum Mono,Léa,Laumet,André,France,https://www.routedurhum.com/fr/skipper/210
+Class 40,Dékuple,Mathelin-Moreaux,William,France,https://www.routedurhum.com/fr/skipper/141
+Rhum Multi,HAPPY,Etheimer,Laurent,France,https://www.routedurhum.com/fr/skipper/299
+Rhum Multi,LODIGROUP,Escoffier,Loïc,France,https://www.routedurhum.com/fr/skipper/83
+IMOCA,Hublot,Roura,Alan,Suisse,https://www.routedurhum.com/fr/skipper/14
+IMOCA,Imagine,Colman,Conrad,Nouvelle-Zélande,https://www.routedurhum.com/fr/skipper/108
+Class 40,Nestenn - Entrepreneurs pour la Planète,Bonnier,Jules,France,https://www.routedurhum.com/fr/skipper/53
+IMOCA,INITIATIVES CŒUR,Davies,Sam,Royaume-Uni,https://www.routedurhum.com/fr/skipper/33
+Rhum Multi,METAROM MG5,Guillemot,Marc,France,https://www.routedurhum.com/fr/skipper/64
+Class 40,Paprec Arkéa,Richomme,Yoann,France,https://www.routedurhum.com/fr/skipper/140
+Class 40,Polka Dot,Mehran,Alex,France,https://www.routedurhum.com/fr/skipper/41
+Class 40,Prendre la mer Agir pour la Forêt,Claveau,Mathieu,France,https://www.routedurhum.com/fr/skipper/40
 Class 40,Prisme,Rossi,Romain,France,https://www.routedurhum.com/fr/skipper/57
-Class 40,Vikings ForEver,Daunar,Sacha,France,https://www.routedurhum.com/fr/skipper/61
-IMOCA,Initiatives-Cœur,Davies,Sam,Royaume-Uni,https://www.routedurhum.com/fr/skipper/33
-Ocean Fifty,Leyton,Goodchild,Sam,Royaume-Uni,https://www.routedurhum.com/fr/skipper/110
-IMOCA,Cap Agir Ensemble,Marsset,Sébastien,France,https://www.routedurhum.com/fr/skipper/116
-Ocean Fifty,Primonial,Rogues,Sébastien,France,https://www.routedurhum.com/fr/skipper/27
-Class 40,Banque du Leman,Koster,Simon,France,https://www.routedurhum.com/fr/skipper/117
-Class 40,Everial,Thuret,Stan,France,https://www.routedurhum.com/fr/skipper/5
+Class 40,Projet Rescue Ocean,Tréhin,Axel,France,https://www.routedurhum.com/fr/skipper/6
+Class 40,QUEGUINER - INNOVEO,Douguet,Corentin,France,https://www.routedurhum.com/fr/skipper/18
+IMOCA,Kattan,Lacaze,Pierre,France,https://www.routedurhum.com/fr/skipper/124
+Class 40,RANDSTAD-AUSY,Louchart,Martin,France,https://www.routedurhum.com/fr/skipper/50
+Class 40,Recycleurs Bretons,Le Borgne,Kieran,France,https://www.routedurhum.com/fr/skipper/69
+Class 40,Redman,Carpentier,Antoine,France,https://www.routedurhum.com/fr/skipper/12
+IMOCA,La Mie Câline,Boissières,Arnaud,France,https://www.routedurhum.com/fr/skipper/4
 IMOCA,LAZARE,Le Turquais,Tanguy,France,https://www.routedurhum.com/fr/skipper/97
+IMOCA,LinkedOut,Ruyant,Thomas,France,https://www.routedurhum.com/fr/skipper/11
+Rhum Mono,Elora,Nemsguern,Olivier,France,https://www.routedurhum.com/fr/skipper/120
+Rhum Multi,RAYON VERT,Nataf,Oren,Israël,https://www.routedurhum.com/fr/skipper/71
+IMOCA,MACSF,Joschke,Isabelle,France,https://www.routedurhum.com/fr/skipper/9
+Rhum Multi,Flo,Poupon,Philippe,France,https://www.routedurhum.com/fr/skipper/285
+Class 40,Rennes / Saint-Malo / Mer Entreprendre,Hulin,Baptiste,France,https://www.routedurhum.com/fr/skipper/136
+IMOCA,Maître CoQ V,Bestaven,Yannick,France,https://www.routedurhum.com/fr/skipper/29
+Class 40,CURIUM life forward,Lepesqueux,Marc,France,https://www.routedurhum.com/fr/skipper/56
+IMOCA,Malizia - Seaexplorer,Herrmann,Boris,Allemagne,https://www.routedurhum.com/fr/skipper/28
+Ocean Fifty,ARKEMA,Vlamynck,Quentin,France,https://www.routedurhum.com/fr/skipper/75
+Rhum Mono,FAIAOAHE,Gerin,Rémy,France,https://www.routedurhum.com/fr/skipper/85
+IMOCA,Medallia,Hare,Pipe,Royaume-Uni,https://www.routedurhum.com/fr/skipper/42
+Rhum Multi,We Explore,Jourdain,Roland,France,https://www.routedurhum.com/fr/skipper/20
+IMOCA,Nexans - Art & Fenêtres,Amédéo,Fabrice,France,https://www.routedurhum.com/fr/skipper/22
+Ultim,Use It Again! by Extia,Pilliard,Romain,France,https://www.routedurhum.com/fr/skipper/35
+Class 40,SERENIS Consulting,Galfione,Jean,France,https://www.routedurhum.com/fr/skipper/32
+Class 40,SOGESTRAN - SEAFRIGO,Château,Cédric,France,https://www.routedurhum.com/fr/skipper/60
+IMOCA,Holcim - PRB,Escoffier,Kevin,France,https://www.routedurhum.com/fr/skipper/19
+Ocean Fifty,LEYTON,Goodchild,Sam,Royaume-Uni,https://www.routedurhum.com/fr/skipper/110
+IMOCA,PRYSMIAN GROUP,Pedote,Giancarlo,Italie,https://www.routedurhum.com/fr/skipper/23
+Ocean Fifty,Primonial,Rogues,Sébastien,France,https://www.routedurhum.com/fr/skipper/27
+Class 40,Médecins du monde,Ursault Poupon,Morgane,France,https://www.routedurhum.com/fr/skipper/66
+Class 40,VICITAN,Le Vourch,Didier,France,https://www.routedurhum.com/fr/skipper/76
+IMOCA,Rêve de Large - Region Guadeloupe,Sepho,Rodolphe,France,https://www.routedurhum.com/fr/skipper/297
 Ocean Fifty,Solidaires En Peloton - ARSEP,Vauchel-Camus,Thibaut,France,https://www.routedurhum.com/fr/skipper/102
 Ultim,Sodebo Ultim 3,Coville,Thomas,France,https://www.routedurhum.com/fr/skipper/25
-IMOCA,LinkedOut,Ruyant,Thomas,France,https://www.routedurhum.com/fr/skipper/11
-Class 40,La réunion Lé La,Jost,Victor,France,https://www.routedurhum.com/fr/skipper/139
-Rhum Mono,Cap au cap Location,Clerton,Wilfrid,France,https://www.routedurhum.com/fr/skipper/214
-Class 40,Napadelis,Mathelin-Moreaux,William,France,https://www.routedurhum.com/fr/skipper/141
+IMOCA,Monnoyeur - Duo for a job,Ferre,Benjamin,France,https://www.routedurhum.com/fr/skipper/72
+Class 40,Bateau Cit'Hôtel - Région Guadeloupe,Daunar,Sacha,France,https://www.routedurhum.com/fr/skipper/61
+Rhum Mono,CAP AU CAP LOCATION,Clerton,Wilfrid,France,https://www.routedurhum.com/fr/skipper/214
+Class 40,VIRANGA,Hamez,Emmanuel,France,https://www.routedurhum.com/fr/skipper/130
 Rhum Mono,Tradysion Gwadloup,Bissainte,Willy,France,https://www.routedurhum.com/fr/skipper/131
-Class 40,Groupe SNEF,Macaire,Xavier,France,https://www.routedurhum.com/fr/skipper/16
-IMOCA,Maître CoQ V,Bestaven,Yannick,France,https://www.routedurhum.com/fr/skipper/29
-Class 40,Paprec - Arkea,Richomme,Yoann,France,https://www.routedurhum.com/fr/skipper/140
-Class 40,EDIGO ~ UNIVERRE,Courbon,Yves,France,https://www.routedurhum.com/fr/skipper/63
-Ultim,Actual,Le Blévec,Yves,France,https://www.routedurhum.com/fr/skipper/65
+Class 40,VOGUE AVEC UN CROHN,Attwell,Pierre-Louis,France,https://www.routedurhum.com/fr/skipper/58
+IMOCA,V and B - Monbana - Mayenne,Sorel,Maxime,France,https://www.routedurhum.com/fr/skipper/15
+Class 40,Volvo,Gerckens,Jonas,Belgique,https://www.routedurhum.com/fr/skipper/17
+Class 40,Yoda,Bouvet,Franz,France,https://www.routedurhum.com/fr/skipper/38
+Ultim,ACTUAL,Le Blévec,Yves,France,https://www.routedurhum.com/fr/skipper/65
+IMOCA,TEAMWORK.NET,Mettraux,Justine,France,https://www.routedurhum.com/fr/skipper/304
