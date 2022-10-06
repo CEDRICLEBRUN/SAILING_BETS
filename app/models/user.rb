@@ -53,11 +53,13 @@ class User < ApplicationRecord
     all_users = owner + accepted_users
     all_players = []
     all_users.each do |user|
-      case category
-      when nil
-        all_players << [user, user.display_score_total]
-      else
-        all_players << [user, user.display_score_by_category(category)]
+      if user.bets.length == 18
+        case category
+        when nil
+          all_players << [user, user.display_score_total]
+        else
+          all_players << [user, user.display_score_by_category(category)]
+        end
       end
     end
     players = all_players.sort_by { |el| el[1] }

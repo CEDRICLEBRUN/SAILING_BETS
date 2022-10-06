@@ -51,6 +51,13 @@
     </div>
   </div>
 
+  <% if Time.now <= @start_time %>
+    <div class="info-user">
+      <i class="fa-solid fa-circle-info"></i>
+      <p>Tu pourras voir les paris des autres joueurs lorsque la course sera lancée !</p>
+    </div>
+  <% end %>
+
   <!-- Ranking -->
   <% @users.each_with_index do |user, index| %>
     <div data-controller="show-bets">
@@ -63,13 +70,13 @@
           <% else %>
             <div class="ranking-card flex justify-between items-center">
           <% end %>
-              <% if Time.now > Time.new(2022, 9, 29, 17, 50) %>
+              <% if Time.now > @start_time %>
                 <p><strong><%= index + 1 %></strong></p>
               <% end %>
               <div>
                 <p><%= user.first.first_name %> <%= user.first.last_name %></p>
               </div>
-              <% if Time.now > Time.new(2022, 9, 29, 17, 50) %>
+              <% if Time.now > @start_time %>
                 <div class="ranking-card-points flex items-center">
                   <p class="score"><%= user.last %></p>
                   <p>pts</p>
@@ -83,7 +90,7 @@
             </div>
         </div>
         <!-- Bets -->
-        <% if Time.now > Time.new(2022, 9, 29, 17, 50) %>
+        <% if Time.now > @start_time %>
           <% if params[:category].nil? %>
             <div class="not-showed user-bets" data-show-bets-target="link">
               <% Boat::BOATCLASSES.each do |boat_class| %>
@@ -117,5 +124,11 @@
     </div>
   <% end %>
 
+  <% if @users.select {|user| user.first == current_user}.empty? %>
+    <div class="info-user">
+      <i class="fa-solid fa-circle-info"></i>
+      <p>Pour apparaître dans la liste des joueurs, tu dois avoir complété tous tes paris !</p>
+    </div>
+  <% end %>
 
 </div>

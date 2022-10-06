@@ -88,3 +88,14 @@
   border-bottom: 4px solid $blue;
   color: $blue;
 }
+
+.info-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $blue;
+  font-size: 30px;
+  p {
+    padding: 10px;
+  }
+}
