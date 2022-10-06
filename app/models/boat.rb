@@ -24,12 +24,12 @@ class Boat < ApplicationRecord
       rhum_multi << "#{boat.name} - #{boat.skipper_last_name} #{boat.skipper_first_name}"
     end
   end
-  ULTIM = ultims
-  IMOCA = imocas
-  OCEANFIFTY = ocean_fifty
-  CLASS40 = class_40
-  RHUMMONO = rhum_mono
-  RHUMMULTI = rhum_multi
+  # ULTIM = ultims
+  # IMOCA = imocas
+  # OCEANFIFTY = ocean_fifty
+  # CLASS40 = class_40
+  # RHUMMONO = rhum_mono
+  # RHUMMULTI = rhum_multi
   BOATCLASSES = ["Ultim", "IMOCA", "Ocean Fifty", "Class 40", "Rhum Mono", "Rhum Multi"]
 
   def result
