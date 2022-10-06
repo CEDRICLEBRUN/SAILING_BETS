@@ -38,23 +38,34 @@
   </div>
 
   <!-- Link to different rankings -->
-  <div class="menu">
-    <%= link_to league_path(@league, category: nil), class: (params[:category] == nil ? "menu-active" : "menu-disactive") do %>
-      <p class="text-center">GENERAL</p>
-    <% end %>
-    <div class="flex justify-around mt-9 mb-6">
-      <% Boat::BOATCLASSES.each do |boat_class| %>
-        <%= link_to league_path(@league, category: boat_class), class: (params[:category] == boat_class ? "menu-active" : "menu-disactive") do %>
-          <p><%= boat_class %></p>
-        <% end %>
+  <% if Time.now > @start_time %>
+    <div class="menu">
+      <%= link_to league_path(@league, category: nil), class: (params[:category] == nil ? "menu-active" : "menu-disactive") do %>
+        <p class="text-center">GENERAL</p>
       <% end %>
+      <div class="flex justify-around mt-9 mb-6">
+        <% Boat::BOATCLASSES.each do |boat_class| %>
+          <%= link_to league_path(@league, category: boat_class), class: (params[:category] == boat_class ? "menu-active" : "menu-disactive") do %>
+            <p><%= boat_class %></p>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 
   <% if Time.now <= @start_time %>
     <div class="info-user">
       <i class="fa-solid fa-circle-info"></i>
       <p>Tu pourras voir les paris des autres joueurs lorsque la course sera lancée !</p>
+    </div>
+  <% end %>
+  
+  <% if @users.select {|user| user.first == current_user}.empty? %>
+    <div class="info-user">
+      <div class="warning-user">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p><strong>Pour apparaître dans la liste des joueurs, tu dois avoir complété tous tes paris !</strong></p>
+      </div>
     </div>
   <% end %>
 
@@ -121,13 +132,6 @@
           <% end %>
         <% end %>
       </div>
-    </div>
-  <% end %>
-
-  <% if @users.select {|user| user.first == current_user}.empty? %>
-    <div class="info-user">
-      <i class="fa-solid fa-circle-info"></i>
-      <p>Pour apparaître dans la liste des joueurs, tu dois avoir complété tous tes paris !</p>
     </div>
   <% end %>
 
