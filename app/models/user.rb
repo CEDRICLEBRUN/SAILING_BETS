@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_one_attached :photo
   validates :first_name, :last_name, presence: true
   validates :bets, length: { maximum: 18 }
+  validates :email, uniqueness: true
 
   after_create :set_total_score
 
@@ -49,7 +50,6 @@ class User < ApplicationRecord
   def self.accepted_in_league(league, category)
     owner = User.includes(:leagues).where(leagues: { id: league.id })
     accepted_users = User.includes(:admissions).where(admissions: { league: league, status: "accepted" })
-    owner + accepted_users
     all_users = owner + accepted_users
     all_players = []
     all_users.each do |user|
