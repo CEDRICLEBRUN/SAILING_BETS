@@ -9,7 +9,7 @@ class BetsController < ApplicationController
   end
 
   def new
-    if Time.now > Time.new(2022,11,6,13,01)
+    if Time.now > Time.new(2022,11,8,13,01)
       redirect_to bets_path, alert: "La course est partie, il est trop tard pour faire tes paris..."
     end
   end
@@ -42,7 +42,7 @@ class BetsController < ApplicationController
   end
 
   def change
-    if Time.now > Time.new(2022,11,6,13,02)
+    if Time.now > Time.new(2022,11,8,13,02)
       redirect_to bets_path, alert: "La course est partie, il est trop tard pour modifier tes paris..."
     end
   end

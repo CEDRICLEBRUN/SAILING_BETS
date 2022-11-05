@@ -10,7 +10,7 @@ class LeaguesController < ApplicationController
       @admissions = Admission.where(league: @league, status: "accepted")
       @users = User.accepted_in_league(@league, params[:category])
       @my_leagues = League.where_am_i(current_user)
-      @start_time = Time.new(2022,11,6,13,02)
+      @start_time = Time.new(2022,11,8,13,02)
     else
       flash[:alert] = "Pas accès à cette ligue..."
       redirect_to users_dashboard_path
