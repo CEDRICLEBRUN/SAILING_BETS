@@ -6,10 +6,11 @@ class BetsController < ApplicationController
     @class_40s = index_boat('Class 40')
     @rhum_monos = index_boat('Rhum Mono')
     @rhum_multis = index_boat('Rhum Multi')
+    @start_time = Time.new(2022,11,9,14,14)
   end
 
   def new
-    if Time.now > Time.new(2022,11,8,13,01)
+    if Time.now > Time.new(2022,11,9,14,14)
       redirect_to bets_path, alert: "La course est partie, il est trop tard pour faire tes paris..."
     end
   end
@@ -42,7 +43,7 @@ class BetsController < ApplicationController
   end
 
   def change
-    if Time.now > Time.new(2022,11,8,13,02)
+    if Time.now > Time.new(2022,11,9,14,14)
       redirect_to bets_path, alert: "La course est partie, il est trop tard pour modifier tes paris..."
     end
   end

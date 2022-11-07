@@ -8,28 +8,38 @@
         <p><i class="fas fa-hourglass-half"></i></p>
       </div>
       <div class="timer-time my-10">
-        <div data-controller="countdown-start" data-countdown-start-date-value="Nov 08, 2022 13:02:00"></div>
+        <div data-controller="countdown-start" data-countdown-start-date-value="Nov 09, 2022 14:15:00"></div>
       </div>
     </div>
 
     <% if user_signed_in? %>
-      <% if current_user.bets.length == 18 %>
-        <p class="home-body">Tes paris sont faits mais il te reste quelques jours pour changer...</p>
-        <p><%= link_to "Je vérifie mes paris", bets_path, class: "btn-main my-4" %></p>
+      <% if Time.now < @start_time  %>
+        <% if current_user.bets.length == 18 %>
+          <p class="home-body">Tes paris sont faits mais il te reste quelques jours pour changer...</p>
+          <p><%= link_to "Je vérifie mes paris", bets_path, class: "btn-main my-4" %></p>
+        <% else %>
+          <p class="home-body">Tu n'as pas encore fait tous tes paris, il te reste encore quelques jours pour le faire...</p>
+          <p><%= link_to "Je parie", bets_path, class: "btn-main my-4" %></p>
+        <% end %>
+        <% if League.where_am_i(current_user).empty? %>
+          <p class="home-body">Tu ne peux pas encore comparer tes résultats car tu n'as pas encore rejoint de Ligue</p>
+          <p><%= link_to "Je rejoins une Ligue", leagues_path, class: "btn-main my-4" %></p>
+        <% end %>
       <% else %>
-        <p class="home-body">Tu n'as pas encore fait tous tes paris, il te reste encore quelques jours pour le faire...</p>
-        <p><%= link_to "Je parie", bets_path, class: "btn-main my-4" %></p>
-      <% end %>
-      <% if League.where_am_i(current_user).empty? %>
-        <p class="home-body">Tu ne peux pas encore comparer tes résultats car tu n'as pas encore rejoint de Ligue</p>
-        <p><%= link_to "Je rejoins une Ligue", leagues_path, class: "btn-main my-4" %></p>
+        <div class="my-10">
+          <p><%= link_to "Se connecter", new_user_session_path, class: "btn-main my-4" %></p>
+        </div>
+        <div class="my-10">
+          <p><%= link_to "S'inscrire", new_user_registration_path, class: "btn-main my-4" %></p>
+        </div>
       <% end %>
     <% else %>
-      <div class="my-10">
-        <p><%= link_to "Se connecter", new_user_session_path, class: "btn-main my-4" %></p>
-      </div>
-      <div class="my-10">
-        <p><%= link_to "S'inscrire", new_user_registration_path, class: "btn-main my-4" %></p>
-      </div>
+      <% if League.where_am_i_accepted(current_user).empty? %>
+        <p class="home-body">Tu ne peux pas encore comparer tes résultats car tu n'as pas encore rejoint de Ligue</p>
+        <p><%= link_to "Je rejoins une Ligue", leagues_path, class: "btn-main my-4" %></p>
+      <% else %>
+        <p class="home-body">Les bateaux sont en mer et les virements s'enchainent... Le classement a-t-il évolué ?</p>
+        <p><%= link_to "Je regarde mon classement", league_path(League.where_am_i(current_user).first), class: "btn-main my-4" %></p>
+      <% end %>
     <% end %>
 </div>
