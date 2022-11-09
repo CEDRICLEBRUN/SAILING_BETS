@@ -4,7 +4,7 @@ export default class extends Controller {
   static values = {
     date: String,
     refreshInterval: { type: Number, default: 1000 },
-    expiredMessage: { type: String, default: "Les pronos sont ouverts pour le Giro!" }
+    expiredMessage: { type: String, default: "" }
   }
 
   connect() {

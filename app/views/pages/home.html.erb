@@ -26,20 +26,20 @@
           <p><%= link_to "Je rejoins une Ligue", leagues_path, class: "btn-main my-4" %></p>
         <% end %>
       <% else %>
-        <div class="my-10">
-          <p><%= link_to "Se connecter", new_user_session_path, class: "btn-main my-4" %></p>
-        </div>
-        <div class="my-10">
-          <p><%= link_to "S'inscrire", new_user_registration_path, class: "btn-main my-4" %></p>
-        </div>
+        <% if League.where_am_i_accepted(current_user).empty? %>
+          <p class="home-body">Tu ne peux pas encore comparer tes résultats car tu n'as pas encore rejoint de Ligue</p>
+          <p><%= link_to "Je rejoins une Ligue", leagues_path, class: "btn-main my-4" %></p>
+        <% else %>
+          <p class="home-body">Les bateaux sont en mer et les virements s'enchainent... Le classement a-t-il évolué ?</p>
+          <p><%= link_to "Je regarde mon classement", league_path(League.where_am_i(current_user).first), class: "btn-main my-4" %></p>
+        <% end %>
       <% end %>
     <% else %>
-      <% if League.where_am_i_accepted(current_user).empty? %>
-        <p class="home-body">Tu ne peux pas encore comparer tes résultats car tu n'as pas encore rejoint de Ligue</p>
-        <p><%= link_to "Je rejoins une Ligue", leagues_path, class: "btn-main my-4" %></p>
-      <% else %>
-        <p class="home-body">Les bateaux sont en mer et les virements s'enchainent... Le classement a-t-il évolué ?</p>
-        <p><%= link_to "Je regarde mon classement", league_path(League.where_am_i(current_user).first), class: "btn-main my-4" %></p>
-      <% end %>
+      <div class="my-10">
+        <p><%= link_to "Se connecter", new_user_session_path, class: "btn-main my-4" %></p>
+      </div>
+      <div class="my-10">
+        <p><%= link_to "S'inscrire", new_user_registration_path, class: "btn-main my-4" %></p>
+      </div>
     <% end %>
 </div>
