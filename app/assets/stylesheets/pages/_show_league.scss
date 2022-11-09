@@ -14,7 +14,7 @@
 
 .user-bets {
   display: grid;
-  min-height: 230px;
+  height: 350px;
   grid-template: repeat(6, 1fr) / repeat(6, 1fr);
   align-items: center;
 }
