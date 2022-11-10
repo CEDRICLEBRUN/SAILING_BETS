@@ -3,7 +3,6 @@ class UpdateResultsJob < ApplicationJob
   require 'uri'
   queue_as :default
 
-
   def perform()
     puts 'Deleting results'
 
@@ -37,9 +36,6 @@ class UpdateResultsJob < ApplicationJob
       player.bets.each do |bet|
         bet.score_compute!
       end
-    end
-
-    players.each do |player|
       player.total_scores.first.calcul_score
     end
   end
