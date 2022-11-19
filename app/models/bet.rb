@@ -8,7 +8,7 @@ class Bet < ApplicationRecord
 
   def score_compute!
     boat = Boat.find(self.boat.id)
-    if boat.result.nil?
+    if boat.result.result_position.nil?
       case Boat.where(category: boat.category).count
       when 1..10
         self.score = Boat.where(category: boat.category).count + 1
