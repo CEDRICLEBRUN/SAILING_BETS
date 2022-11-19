@@ -36,6 +36,8 @@ class UpdateResultsJob < ApplicationJob
       player.bets.each do |bet|
         bet.score_compute!
       end
+      puts player
+      puts player.bets
       player.total_scores.first.calcul_score
     end
   end
